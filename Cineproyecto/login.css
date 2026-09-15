@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+body {
+
+    background: #0f1118;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+}
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(229, 9, 20, .15),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 200, 87, .10),
+            transparent 40%
+        );
+
+}
+
+.container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+/* PANEL IZQUIERDO */
+
+.branding {
+
+    width: 55%;
+
+    padding: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.tag {
+
+    color: #ffc857;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+}
+
+.branding h1 {
+
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+}
+
+.branding p {
+
+    max-width: 500px;
+
+    color: #a3a9b9;
+
+    line-height: 1.8;
+
+}
+
+.info-box {
+
+    width: 350px;
+
+    margin-top: 50px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.info-box h3 {
+
+    margin-bottom: 10px;
+
+}
+
+/* PANEL DERECHO */
+
+.login-panel {
+
+    width: 45%;
+
+    background: rgba(255, 255, 255, .03);
+
+    backdrop-filter: blur(20px);
+
+    border-left: 1px solid rgba(255, 255, 255, .08);
+
+    padding: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.login-panel h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+.login-panel p {
+
+    color: #9ea5b5;
+
+    margin-bottom: 40px;
+
+}
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 25px;
+
+}
+
+.input-group label {
+
+    margin-bottom: 10px;
+
+    color: #cfd4df;
+
+}
+
+.input-group input {
+
+    background: #171a23;
+
+    border: 1px solid #252a38;
+
+    color: white;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+.input-group input:focus {
+
+    border-color: #e50914;
+
+}
+
+.options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+.options a {
+
+    color: #ffc857;
+
+    text-decoration: none;
+
+}
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(229, 9, 20, .35);
+
+}
+
+.footer {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+    color: #7b8294;
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .container {
+
+        flex-direction: column;
+
+    }
+
+    .branding,
+    .login-panel {
+
+        width: 100%;
+
+        padding: 40px;
+
+    }
+
+    .branding h1 {
+
+        font-size: 50px;
+
+    }
+
+}
