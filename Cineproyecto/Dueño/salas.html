@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cinema Pro | Salas
+    </title>
+    <link rel="stylesheet" href="salas.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>
+                CINEMA PRO
+            </h1>
+            <p>
+                ADMINISTRATIVE SYSTEM
+            </p>
+        </div>
+        <nav>
+            <div class="menu-title">
+                GENERAL
+            </div>
+            <a href="pagina_principal.html">
+                ✦ Centro ejecutivo
+            </a>
+            <a href="operaciones.html">
+                ◉ Operaciones
+            </a>
+            <a href="alertas.html">
+                ⚠︎ Alertas
+            </a>
+            <div class="menu-title">
+                CINE
+            </div>
+            <a href="salas.html" class="active">
+                ◫ Salas
+            </a>
+            <a href="cartelera.html">
+                ◈ Cartelera
+            </a>
+            <a href="boletos.html">
+                ⌘ Boletos
+            </a>
+            <a href="dulceria.html">
+                ◌ Dulcería
+            </a>
+            <a href="inventario.html">
+                ⊞ Inventario
+            </a>
+            <div class="menu-title">
+                EMPRESA
+            </div>
+            <a href="personal.html">
+                ✉︎ Personal
+            </a>
+            <a href="finanzas.html">
+                ◇ Finanzas
+            </a>
+            <a href="#">
+                ▣ Reportes
+            </a>
+            <a href="#">
+                ⚙︎ Configuración
+            </a>
+        </nav>
+    </aside>
+    <main>
+        <header class="header">
+            <div>
+                <h1>
+                    Análisis de salas
+                </h1>
+                <p>
+                    Rentabilidad, ocupación y rendimiento de activos del cine
+                </p>
+            </div>
+            <button class="button">
+                Actualizar reporte
+            </button>
+        </header>
+        <!-- RESUMEN EJECUTIVO -->
+        <!-- ========================================================= -->
+        <!-- DASHBOARD EJECUTIVO DE SALAS -->
+        <!-- ========================================================= -->
+        <section class="block">
+            <div class="block-title">
+                Dashboard Ejecutivo de Salas
+            </div>
+            <!-- KPI PRINCIPAL -->
+            <div class="panel executive-panel">
+                <span class="executive-label">
+                    Utilidad Operativa del Mes
+                </span>
+                <h1 class="executive-number">
+                    $122,500
+                </h1>
+                <p class="executive-description">
+                    Después de cubrir nómina, energía eléctrica, climatización,
+                    limpieza, mantenimiento preventivo, mantenimiento correctivo,
+                    depreciación de proyectores y gastos generales de operación.
+                </p>
+                <div class="executive-footer">
+                    <span class="green">
+                        ▲ 8.4% respecto al mes anterior
+                    </span>
+                    <span>
+                        Margen operativo: <strong>53%</strong>
+                    </span>
+                </div>
+            </div>
+            <!-- INDICADORES -->
+            <div class="dashboard-grid">
+                <!-- INGRESOS -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Ingresos del mes
+                    </span>
+                    <h2>
+                        $230,000
+                    </h2>
+                    <p>
+                        4,532 boletos vendidos
+                    </p>
+                </div>
+                <!-- GASTOS -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Gastos Operativos
+                    </span>
+                    <h2>
+                        $107,500
+                    </h2>
+                    <p>
+                        Nómina · Energía · Limpieza · Proyectores · Mantenimiento
+                    </p>
+                </div>
+                <!-- OCUPACION -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Ocupación promedio
+                    </span>
+                    <h2>
+                        73%
+                    </h2>
+                    <p>
+                        832 de 1,140 asientos ocupados
+                    </p>
+                </div>
+                <!-- SALA LIDER -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Sala más rentable
+                    </span>
+                    <h2>
+                        VIP 1
+                    </h2>
+                    <p class="green">
+                        Utilidad $34,000
+                    </p>
+                </div>
+                <!-- SALA CRITICA -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Sala con menor rendimiento
+                    </span>
+                    <h2>
+                        Sala 4
+                    </h2>
+                    <p class="red">
+                        -$1,800 este mes
+                    </p>
+                </div>
+                <!-- OPERACION -->
+                <div class="panel stat-card">
+                    <span class="stat-label">
+                        Infraestructura
+                    </span>
+                    <h2>
+                        7 / 7
+                    </h2>
+                    <p>
+                        Todas las salas operando correctamente
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+            ANALISIS EJECUTIVO DE SALAS
+        ========================= -->
+
+        <section class="block">
+
+            <div class="block-title">
+                Estado general de salas
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="metric-card">
+                    <span>
+                        Salas activas
+                    </span>
+                    <strong>
+                        7
+                    </strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>
+                        Capacidad instalada
+                    </span>
+                    <strong>
+                        1,140 personas
+                    </strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>
+                        Funciones realizadas
+                    </span>
+                    <strong>
+                        160
+                    </strong>
+                </div>
+
+                <div class="metric-card">
+                    <span>
+                        Uso infraestructura
+                    </span>
+                    <strong class="green">
+                        78%
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Indicador
+                            </th>
+                            <th>
+                                Resultado
+                            </th>
+                            <th>
+                                Estado
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                Salas disponibles
+                            </td>
+                            <td>
+                                7 / 7
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Operando
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Mantenimiento pendiente
+                            </td>
+                            <td>
+                                2 salas
+                            </td>
+                            <td>
+                                <span class="tag tag-yellow">
+                                    Revisar
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section class="block">
+
+            <div class="block-title">
+                Rentabilidad financiera por sala
+            </div>
+
+            <div class="panel chart-panel">
+
+                <canvas id="graficaRentabilidadSalas"></canvas>
+
+            </div>
+
+            <div class="panel">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Posición
+                            </th>
+                            <th>
+                                Sala
+                            </th>
+                            <th>
+                                Ingresos
+                            </th>
+                            <th>
+                                Costos operación
+                            </th>
+                            <th>
+                                Utilidad neta
+                            </th>
+                            <th>
+                                Margen
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                VIP 1
+                            </td>
+                            <td>
+                                $52,000
+                            </td>
+                            <td>
+                                $18,000
+                            </td>
+                            <td class="green">
+                                $34,000
+                            </td>
+                            <td class="green">
+                                65%
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                VIP 2
+                            </td>
+                            <td>
+                                $41,000
+                            </td>
+                            <td>
+                                $16,000
+                            </td>
+                            <td class="green">
+                                $25,000
+                            </td>
+                            <td>
+                                61%
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                Sala 4
+                            </td>
+                            <td>
+                                $14,200
+                            </td>
+                            <td>
+                                $16,000
+                            </td>
+                            <td class="red">
+                                -$1,800
+                            </td>
+                            <td class="red">
+                                -12%
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+                <!-- ANALISIS INDIVIDUAL DE SALAS -->
+        <!-- RESUMEN DE LAS 7 SALAS -->
+
+        <section class="block">
+
+            <div class="block-title">
+                Estado operativo de las salas
+            </div>
+
+            <div class="rooms-grid">
+
+                <!-- SALA VIP 1 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>VIP 1</h2>
+
+                            <p>Premium VIP</p>
+
+                        </div>
+
+                        <span class="tag tag-green">
+                            Excelente
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Minecraft
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div>
+
+                            <span>Capacidad</span>
+
+                            <strong>120</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Ocupación</span>
+
+                            <strong class="green">94%</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Funciones</span>
+
+                            <strong>32</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Ingreso</span>
+
+                            <strong>$52,000</strong>
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-costs">
+
+                        <h4>Costos del periodo</h4>
+
+                        <ul>
+
+                            <li>Nómina técnicos <strong>$4,800</strong></li>
+
+                            <li>Limpieza <strong>$2,100</strong></li>
+
+                            <li>Energía <strong>$3,500</strong></li>
+
+                            <li>Proyector <strong>$1,700</strong></li>
+
+                            <li>Mantenimiento <strong>$1,200</strong></li>
+
+                            <li>Otros <strong>$4,700</strong></li>
+
+                        </ul>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costo total</span>
+
+                            <strong>$18,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="green">$34,000</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- VIP 2 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>VIP 2</h2>
+
+                            <p>Premium VIP</p>
+
+                        </div>
+
+                        <span class="tag tag-green">
+
+                            Buena
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Avatar
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>100</strong></div>
+
+                        <div><span>Ocupación</span><strong>82%</strong></div>
+
+                        <div><span>Funciones</span><strong>28</strong></div>
+
+                        <div><span>Ingreso</span><strong>$41,000</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-costs">
+
+                        <ul>
+
+                            <li>Nómina <strong>$4,200</strong></li>
+
+                            <li>Limpieza <strong>$2,000</strong></li>
+
+                            <li>Energía <strong>$3,000</strong></li>
+
+                            <li>Proyector <strong>$1,500</strong></li>
+
+                            <li>Mantenimiento <strong>$1,800</strong></li>
+
+                            <li>Otros <strong>$5,000</strong></li>
+
+                        </ul>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$17,500</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="green">$23,500</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SALA 3 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>Sala 3</h2>
+
+                            <p>Regular</p>
+
+                        </div>
+
+                        <span class="tag tag-green">
+
+                            Buena
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Dune
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>180</strong></div>
+
+                        <div><span>Ocupación</span><strong>76%</strong></div>
+
+                        <div><span>Funciones</span><strong>24</strong></div>
+
+                        <div><span>Ingreso</span><strong>$32,500</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$14,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="green">$18,500</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SALA 4 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>Sala 4</h2>
+
+                            <p>Regular</p>
+
+                        </div>
+
+                        <span class="tag tag-red">
+
+                            Crítica
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Superman
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>220</strong></div>
+
+                        <div><span class="red">38%</span></div>
+
+                        <div><span>Funciones</span><strong>18</strong></div>
+
+                        <div><span>Ingreso</span><strong>$14,200</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$16,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="red">-$1,800</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SALA 5 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>Sala 5</h2>
+
+                            <p>Regular</p>
+
+                        </div>
+
+                        <span class="tag tag-green">
+
+                            Excelente
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Terror Night
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>150</strong></div>
+
+                        <div><span>Ocupación</span><strong>88%</strong></div>
+
+                        <div><span>Funciones</span><strong>25</strong></div>
+
+                        <div><span>Ingreso</span><strong>$36,000</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$15,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="green">$21,000</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SALA 6 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>Sala 6</h2>
+
+                            <p>Regular</p>
+
+                        </div>
+
+                        <span class="tag tag-yellow">
+
+                            Regular
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 El Último Reino
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>200</strong></div>
+
+                        <div><span>Ocupación</span><strong>61%</strong></div>
+
+                        <div><span>Funciones</span><strong>20</strong></div>
+
+                        <div><span>Ingreso</span><strong>$24,500</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$13,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong>$11,500</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SALA 7 -->
+
+                <div class="panel room-card">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <h2>Sala 7</h2>
+
+                            <p>Regular</p>
+
+                        </div>
+
+                        <span class="tag tag-green">
+
+                            Buena
+
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+
+                        🎬 Mario Bros
+
+                    </div>
+
+                    <div class="room-stats">
+
+                        <div><span>Capacidad</span><strong>170</strong></div>
+
+                        <div><span>Ocupación</span><strong>72%</strong></div>
+
+                        <div><span>Funciones</span><strong>22</strong></div>
+
+                        <div><span>Ingreso</span><strong>$29,800</strong></div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="room-footer">
+
+                        <div>
+
+                            <span>Costos</span>
+
+                            <strong>$14,000</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Utilidad</span>
+
+                            <strong class="green">$15,800</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+</body>

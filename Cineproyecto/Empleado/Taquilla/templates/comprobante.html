@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- CONFIGURACIÓN DEL DOCUMENTO -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cinema Pro | Comprobante
+    </title>
+
+    <!-- ESTILOS -->
+
+    <link rel="stylesheet" href="comprobante.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGOTIPO -->
+
+        <div class="logo">
+
+            <h1>
+                CINEMA
+            </h1>
+
+            <p>
+                TAQUILLA
+            </p>
+
+        </div>
+
+
+        <!-- NAVEGACIÓN -->
+
+        <nav>
+
+
+            <!-- OPERACIÓN -->
+
+            <span class="menu-title">
+                OPERACIÓN
+            </span>
+
+
+            <a href="pagina_principal.html">
+
+                Página principal
+
+            </a>
+
+
+            <a href="venta_boletos.html">
+
+                Venta boletos
+
+            </a>
+
+
+            <!-- CAJA -->
+
+            <span class="menu-title">
+                CAJA
+            </span>
+
+
+            <a href="cierre_caja.html">
+
+                Cierre de caja
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="header">
+
+
+            <div>
+
+                <h1>
+                    Comprobante de venta
+                </h1>
+
+                <p>
+                    Confirmación de boleto generado
+                </p>
+
+            </div>
+
+
+            <!-- NUEVA VENTA -->
+
+            <a
+                href="{{ url_for('venta_boletos') }}"
+                class="button"
+            >
+
+                Nueva venta
+
+            </a>
+
+
+        </header>
+
+
+
+
+        <!-- =================================================
+             COMPROBANTE
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Venta completada
+
+            </div>
+
+
+            <div class="panel ticket">
+
+
+                <!-- =========================================
+                     ENCABEZADO DEL COMPROBANTE
+                     ========================================= -->
+
+                <div class="ticket-header">
+
+
+                    <h2>
+                        CINEMA PRO
+                    </h2>
+
+
+                    <span class="tag tag-green">
+
+                        Venta realizada
+
+                    </span>
+
+
+                </div>
+
+
+
+
+                <!-- =========================================
+                     INFORMACIÓN DE LA VENTA
+                     ========================================= -->
+
+                <div class="ticket-info">
+
+
+                    <!-- FOLIO -->
+
+                    <div>
+
+                        <span>
+                            Folio
+                        </span>
+
+                        <strong>
+                            #{{ venta.id_venta }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+
+                    <div>
+
+                        <span>
+                            Fecha
+                        </span>
+
+                        <strong>
+                            {{ venta.fecha_hora.strftime('%d/%m/%Y %H:%M') }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- EMPLEADO -->
+
+                    <div>
+
+                        <span>
+                            Empleado
+                        </span>
+
+                        <strong>
+                            {{ empleado.nombre }}
+                            {{ empleado.apellido }}
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- =========================================
+                     INFORMACIÓN DE LOS BOLETOS
+                     ========================================= -->
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Película
+                            </th>
+
+                            <th>
+                                Sala
+                            </th>
+
+                            <th>
+                                Horario
+                            </th>
+
+                            <th>
+                                Asientos
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+
+                            <!-- PELÍCULA -->
+
+                            <td>
+
+                                {{ funcion.titulo }}
+
+                            </td>
+
+
+                            <!-- SALA -->
+
+                            <td>
+
+                                {{ funcion.nombre_sala }}
+
+                            </td>
+
+
+                            <!-- HORARIO -->
+
+                            <td>
+
+                                {{ funcion.hora_inicio.strftime('%H:%M') }}
+
+                            </td>
+
+
+                            <!-- ASIENTOS -->
+
+                            <td>
+
+                                {% for boleto in boletos %}
+
+                                    {{ boleto.fila }}{{ boleto.numero_asiento }}{% if not loop.last %}, {% endif %}
+
+                                {% endfor %}
+
+                            </td>
+
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+
+
+                <!-- =========================================
+                     RESUMEN DE PAGO
+                     ========================================= -->
+
+                <div class="payment-summary">
+
+
+                    <!-- CANTIDAD -->
+
+                    <div>
+
+                        <span>
+                            Cantidad boletos
+                        </span>
+
+                        <strong>
+                            {{ boletos|length }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- MÉTODO DE PAGO -->
+
+                    <div>
+
+                        <span>
+                            Método pago
+                        </span>
+
+                        <strong>
+                            {{ venta.metodo_pago }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div>
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong class="green">
+
+                            ${{ "%.2f"|format(venta.total) }}
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- =========================================
+                     ACCIONES
+                     ========================================= -->
+
+                <div class="ticket-actions">
+
+
+                    <!-- IMPRIMIR -->
+
+                    <button
+                        type="button"
+                        class="button"
+                        onclick="window.print()"
+                    >
+
+                        Imprimir comprobante
+
+                    </button>
+
+
+                    <!-- CANCELAR -->
+
+                    <form
+                        action="{{ url_for('cancelar_venta', id_venta=venta.id_venta) }}"
+                        method="POST"
+                        style="display:inline;"
+                    >
+
+                        <button
+                            type="submit"
+                            class="button cancel-sale"
+                        >
+
+                            Cancelar venta
+
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             ÚLTIMAS VENTAS DEL TURNO
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Últimas ventas del turno
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Folio
+                            </th>
+
+                            <th>
+                                Película
+                            </th>
+
+                            <th>
+                                Sala
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        {% for venta_turno in ultimas_ventas %}
+
+
+                            <tr>
+
+
+                                <!-- FOLIO -->
+
+                                <td>
+
+                                    #{{ venta_turno.id_venta }}
+
+                                </td>
+
+
+                                <!-- PELÍCULA -->
+
+                                <td>
+
+                                    {{ venta_turno.titulo }}
+
+                                </td>
+
+
+                                <!-- SALA -->
+
+                                <td>
+
+                                    {{ venta_turno.nombre_sala }}
+
+                                </td>
+
+
+                                <!-- TOTAL -->
+
+                                <td>
+
+                                    ${{ "%.2f"|format(venta_turno.total) }}
+
+                                </td>
+
+
+                            </tr>
+
+
+                        {% else %}
+
+
+                            <!-- SIN VENTAS -->
+
+                            <tr>
+
+                                <td colspan="4">
+
+                                    No existen ventas anteriores en este turno.
+
+                                </td>
+
+                            </tr>
+
+
+                        {% endfor %}
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

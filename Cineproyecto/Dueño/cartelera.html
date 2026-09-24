@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cinema Pro | Cartelera
+    </title>
+
+    <link rel="stylesheet" href="cartelera.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h1>
+                CINEMA PRO
+            </h1>
+
+            <p>
+                ADMINISTRATIVE SYSTEM
+            </p>
+
+        </div>
+
+        <nav>
+
+            <div class="menu-title">
+                GENERAL
+            </div>
+
+            <a href="pagina_principal.html">
+                ✦ Centro ejecutivo
+            </a>
+
+            <a href="operaciones.html">
+                ◉ Operaciones
+            </a>
+
+            <a href="alertas.html">
+                ⚠︎ Alertas
+            </a>
+
+            <div class="menu-title">
+                CINE
+            </div>
+
+            <a href="salas.html">
+                ◫ Salas
+            </a>
+
+            <a href="cartelera.html" class="active">
+                ◈ Cartelera
+            </a>
+
+            <a href="boletos.html">
+                ⌘ Boletos
+            </a>
+
+            <a href="dulceria.html">
+                ◌ Dulcería
+            </a>
+
+            <a href="inventario.html">
+                ⊞ Inventario
+            </a>
+
+            <div class="menu-title">
+                EMPRESA
+            </div>
+
+            <a href="personal.html">
+                ✉︎ Personal
+            </a>
+
+            <a href="finanzas.html">
+                ◇ Finanzas
+            </a>
+
+            <a href="#">
+                ▣ Reportes
+            </a>
+
+            <a href="#">
+                ⚙︎ Configuración
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+
+        <header class="header">
+
+            <div>
+
+                <h1>
+                    Centro de rentabilidad de cartelera
+                </h1>
+
+                <p>
+                    Análisis ejecutivo del rendimiento económico de películas
+                </p>
+
+            </div>
+
+            <button class="button">
+                Actualizar reporte
+            </button>
+
+        </header>
+
+
+        <!-- RENTABILIDAD DE LICENCIAS -->
+
+        <section class="block">
+
+            <div class="block-title">
+                Rentabilidad y recuperación de licencias
+            </div>
+
+            <div class="panel">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Película</th>
+
+                            <th>Licencia adquirida</th>
+
+                            <th>Costo licencia</th>
+
+                            <th>Tiempo en cartelera</th>
+
+                            <th>Ingresos acumulados</th>
+
+                            <th>ROI</th>
+
+                            <th>Recuperación</th>
+
+                            <th>Estado</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Minecraft</td>
+
+                            <td>Hace 45 días</td>
+
+                            <td>$48,000</td>
+
+                            <td>21 días</td>
+
+                            <td class="green">$113,500</td>
+
+                            <td class="green">236%</td>
+
+                            <td class="green">237%</td>
+
+                            <td>
+                                <span class="tag tag-green">
+                                    Totalmente recuperada
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Mario Bros</td>
+
+                            <td>Hace 52 días</td>
+
+                            <td>$45,000</td>
+
+                            <td>28 días</td>
+
+                            <td class="green">$92,000</td>
+
+                            <td class="green">204%</td>
+
+                            <td class="green">204%</td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Avatar</td>
+
+                            <td>Hace 60 días</td>
+
+                            <td>$55,000</td>
+
+                            <td>35 días</td>
+
+                            <td>$85,000</td>
+
+                            <td class="green">154%</td>
+
+                            <td class="green">154%</td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Recuperada
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Terror Night</td>
+
+                            <td>Hace 41 días</td>
+
+                            <td>$36,000</td>
+
+                            <td>28 días</td>
+
+                            <td>$55,000</td>
+
+                            <td>153%</td>
+
+                            <td>153%</td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Rentable
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Dune</td>
+
+                            <td>Hace 36 días</td>
+
+                            <td>$31,000</td>
+
+                            <td>21 días</td>
+
+                            <td>$48,000</td>
+
+                            <td>155%</td>
+
+                            <td>155%</td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Estable
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Superman</td>
+
+                            <td>Hace 25 días</td>
+
+                            <td>$22,000</td>
+
+                            <td>14 días</td>
+
+                            <td class="red">$15,000</td>
+
+                            <td class="red">68%</td>
+
+                            <td class="red">No recuperada</td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Riesgo
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>El Último Reino</td>
+
+                            <td>Hace 20 días</td>
+
+                            <td>$20,000</td>
+
+                            <td>14 días</td>
+
+                            <td class="red">$18,000</td>
+
+                            <td class="red">90%</td>
+
+                            <td class="red">Pendiente</td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Evaluar retiro
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+        <!-- DECISIONES SOBRE CONTINUIDAD EN CARTELERA -->
+
+        <section class="block">
+
+            <div class="block-title">
+                Decisiones estratégicas de cartelera
+            </div>
+
+            <div class="panel">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Película
+                            </th>
+
+                            <th>
+                                Tiempo en cartelera
+                            </th>
+
+                            <th>
+                                Rendimiento actual
+                            </th>
+
+                            <th>
+                                Tendencia
+                            </th>
+
+                            <th>
+                                Próxima decisión
+                            </th>
+
+                            <th>
+                                Impacto esperado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Minecraft</td>
+
+                            <td>3 semanas</td>
+
+                            <td class="green">
+                                Muy rentable
+                            </td>
+
+                            <td class="green">
+                                Creciendo
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Aumentar funciones
+                                </span>
+
+                            </td>
+
+                            <td>
+                                +18% ingresos estimados
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Mario Bros</td>
+
+                            <td>4 semanas</td>
+
+                            <td class="green">
+                                Excelente
+                            </td>
+
+                            <td>
+                                Estable
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Mantener
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Flujo constante
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Avatar</td>
+
+                            <td>5 semanas</td>
+
+                            <td>
+                                Rentable
+                            </td>
+
+                            <td class="yellow">
+                                Descendiendo
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Reducir horarios
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Optimizar ocupación
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Terror Night</td>
+
+                            <td>4 semanas</td>
+
+                            <td>
+                                Media
+                            </td>
+
+                            <td class="yellow">
+                                Estable
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Mantener solo noches
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Reduce costos operativos
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Dune</td>
+
+                            <td>3 semanas</td>
+
+                            <td>
+                                Regular
+                            </td>
+
+                            <td class="yellow">
+                                Bajando
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Evaluar reemplazo
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Liberar sala en 2 semanas
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Superman</td>
+
+                            <td>2 semanas</td>
+
+                            <td class="red">
+                                Deficiente
+                            </td>
+
+                            <td class="red">
+                                Descenso
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Retirar cartelera
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Evita pérdidas futuras
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>El Último Reino</td>
+
+                            <td>2 semanas</td>
+
+                            <td class="red">
+                                Muy bajo
+                            </td>
+
+                            <td class="red">
+                                Sin recuperación
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Finalizar exhibición
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Recuperar disponibilidad de sala
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+                <!-- RENTABILIDAD INDIVIDUAL -->
+
+        <!-- RENTABILIDAD POR PELÍCULA -->
+
+        <section class="block">
+
+            <div class="block-title">
+
+                Rentabilidad por película
+
+            </div>
+
+
+
+            <div class="grid-2">
+
+
+
+                <!-- GANANCIA -->
+
+                <div class="panel">
+
+                    <h2>
+
+                        Ganancia neta por película
+
+                    </h2>
+
+                    <div class="chart-container">
+
+                        <div class="chart-row">
+
+                            <span>Minecraft</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:100%;"></div>
+
+                            </div>
+
+                            <strong>$83k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Mario Bros</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:82%;"></div>
+
+                            </div>
+
+                            <strong>$68k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Avatar</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:66%;"></div>
+
+                            </div>
+
+                            <strong>$55k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Terror Night</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:25%;"></div>
+
+                            </div>
+
+                            <strong>$21k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dune</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:33%;"></div>
+
+                            </div>
+
+                            <strong>$27k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Superman</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:4%;"></div>
+
+                            </div>
+
+                            <strong>-$3k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Último Reino</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:8%;"></div>
+
+                            </div>
+
+                            <strong>$2k</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- OCUPACIÓN -->
+
+                <div class="panel">
+
+                    <h2>
+
+                        Ocupación promedio
+
+                    </h2>
+
+                    <div class="chart-container">
+
+                        <div class="chart-row">
+
+                            <span>Minecraft</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:95%;"></div>
+
+                            </div>
+
+                            <strong>95%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Mario Bros</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:91%;"></div>
+
+                            </div>
+
+                            <strong>91%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Avatar</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:84%;"></div>
+
+                            </div>
+
+                            <strong>84%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Terror Night</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:71%;"></div>
+
+                            </div>
+
+                            <strong>71%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dune</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:65%;"></div>
+
+                            </div>
+
+                            <strong>65%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Superman</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:42%;"></div>
+
+                            </div>
+
+                            <strong>42%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Último Reino</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill"
+                                style="width:35%;"></div>
+
+                            </div>
+
+                            <strong>35%</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- PARTICIPACIÓN DE INGRESOS -->
+
+                <div class="panel">
+
+                    <h2>
+
+                        Participación de ingresos
+
+                    </h2>
+
+                    <div class="pie-chart">
+
+                        <div class="pie"
+                        style="background:conic-gradient(
+                        #e50914 0% 27%,
+                        #ff7b00 27% 49%,
+                        #ffc857 49% 67%,
+                        #00c853 67% 80%,
+                        #3f8cff 80% 91%,
+                        #8e44ad 91% 97%,
+                        #555 97% 100%);">
+
+                        </div>
+
+                    </div>
+
+                    <ul class="list">
+
+                        <li>Minecraft — 27%</li>
+
+                        <li>Mario Bros — 22%</li>
+
+                        <li>Avatar — 18%</li>
+
+                        <li>Terror Night — 13%</li>
+
+                        <li>Dune — 11%</li>
+
+                        <li>Superman — 6%</li>
+
+                        <li>Último Reino — 3%</li>
+
+                    </ul>
+
+                </div>
+
+
+
+
+
+                <!-- DISTRIBUCIÓN DE COSTOS -->
+
+                <div class="panel">
+
+                    <h2>
+
+                        Distribución de costos operativos
+
+                    </h2>
+
+                    <div class="pie-chart">
+
+                        <div class="pie"
+                        style="background:conic-gradient(
+                        #ffc857 0% 34%,
+                        #ff6b6b 34% 60%,
+                        #3f8cff 60% 80%,
+                        #8bc34a 80% 92%,
+                        #888 92% 100%);">
+
+                        </div>
+
+                    </div>
+
+                    <ul class="list">
+
+                        <li>Licencias de exhibición — 34%</li>
+
+                        <li>Nómina de técnicos — 26%</li>
+
+                        <li>Energía y proyectores — 20%</li>
+
+                        <li>Mantenimiento de salas — 12%</li>
+
+                        <li>Otros costos — 8%</li>
+
+                    </ul>
+
+                </div>
+
+
+
+
+
+                <!-- DISPERSIÓN -->
+
+                <div class="panel">
+
+                    <h2>
+
+                        Relación ocupación vs utilidad
+
+                    </h2>
+
+                    <div class="scatter-chart">
+
+                        <div class="point"
+                        style="left:95%;bottom:95%;">
+                            M
+                        </div>
+                        <div class="point"
+                        style="left:91%;bottom:82%;">
+                            MB
+                        </div>
+                        <div class="point"
+                        style="left:84%;bottom:66%;">
+                            A
+                        </div>
+                        <div class="point"
+                        style="left:71%;bottom:25%;">
+                            T
+                        </div>
+                        <div class="point"
+                        style="left:65%;bottom:33%;">
+                            D
+                        </div>
+                        <div class="point"
+                        style="left:42%;bottom:2%;">
+                            S
+                        </div>
+                        <div class="point"
+                        style="left:35%;bottom:6%;">
+                            UR
+                        </div>
+                    </div>
+                </div>
+                <!-- RESUMEN -->
+                <div class="panel">
+                    <h2>
+                        Indicadores ejecutivos
+                    </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Película</th>
+                                <th>Ganancia</th>
+                                <th>Margen</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Minecraft</td>
+                                <td class="green">$83,000</td>
+                                <td class="green">73%</td>
+                                <td><span class="tag tag-green">Expandir</span></td>
+                            </tr>
+                            <tr>
+                                <td>Mario Bros</td>
+                                <td class="green">$68,000</td>
+                                <td class="green">74%</td>
+                                <td><span class="tag tag-green">Mantener</span></td>
+                            </tr>
+                            <tr>
+                                <td>Avatar</td>
+                                <td>$55,000</td>
+                                <td>62%</td>
+                                <td><span class="tag tag-green">Estable</span></td>
+                            </tr>
+                            <tr>
+                                <td>Terror Night</td>
+                                <td>$21,000</td>
+                                <td>45%</td>
+                                <td><span class="tag tag-yellow">Optimizar</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dune</td>
+                                <td>$27,000</td>
+                                <td>56%</td>
+                                <td><span class="tag tag-yellow">Promocionar</span></td>
+                            </tr>
+                            <tr>
+                                <td>Superman</td>
+                                <td class="red">-$3,000</td>
+                                <td class="red">-8%</td>
+                                <td><span class="tag tag-red">Retirar</span></td>
+                            </tr>
+                            <tr>
+                                <td>Último Reino</td>
+                                <td>$2,000</td>
+                                <td class="red">11%</td>
+                                <td><span class="tag tag-red">Evaluar retiro</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
