@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Pro | Salas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gerencia/salas.css') }}">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>CINEMA</h1>
+            <p>GERENCIA</p>
+        </div>
+
+        <nav class="nav">
+
+            <div class="nav-section">
+                <span class="nav-title">OPERACIÓN</span>
+
+                <a href="pagina_principal">
+                    <span>Centro de gestión</span>
+                </a>
+
+                <a href="operacion">
+                    <span>Operación</span>
+                </a>
+
+                <a href="taquilla">
+                    <span>Taquilla</span>
+                </a>
+
+                <a href="dulceria">
+                    <span>Dulcería</span>
+                </a>
+
+                <a href="salas" class="active">
+                    <span>Salas</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-title">RECURSOS</span>
+
+                <a href="personal">
+                    <span>Personal</span>
+                </a>
+
+                <a href="inventario">
+                    <span>Inventario</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-title">CONTROL</span>
+
+                <a href="caja">
+                    <span>Caja</span>
+                </a>
+
+                <a href="incidencias">
+                    <span>Incidencias</span>
+                </a>
+
+                <a href="reportes">
+                    <span>Reportes</span>
+                </a>
+            </div>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL
+    ========================================================== -->
+    <main class="main">
+
+        <!-- =====================================================
+             ENCABEZADO
+        ====================================================== -->
+        <header class="header">
+
+            <div>
+                <h2>Salas</h2>
+
+                <p>
+                    Supervisión del estado, ocupación, funciones e incidencias
+                    de las salas del cine.
+                </p>
+            </div>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                Operación de salas
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             RESUMEN DE SALAS
+        ====================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+                <div>
+                    <h3>Resumen de salas</h3>
+                    <p>Estado general de las áreas de proyección.</p>
+                </div>
+            </div>
+
+            <div class="metric-grid">
+
+                <div class="metric-card">
+                    <span class="metric-label">Salas totales</span>
+                    <strong>7</strong>
+                    <small>5 regulares · 2 VIP</small>
+                </div>
+
+                <div class="metric-card success">
+                    <span class="metric-label">Salas operativas</span>
+                    <strong>6</strong>
+                    <small>85.7% del total</small>
+                </div>
+
+                <div class="metric-card warning">
+                    <span class="metric-label">En atención</span>
+                    <strong>1</strong>
+                    <small>Requiere supervisión</small>
+                </div>
+
+                <div class="metric-card">
+                    <span class="metric-label">Capacidad total</span>
+                    <strong>500</strong>
+                    <small>Asientos disponibles</small>
+                </div>
+
+                <div class="metric-card">
+                    <span class="metric-label">Ocupación actual</span>
+                    <strong>72%</strong>
+                    <small>Promedio de funciones</small>
+                </div>
+
+                <div class="metric-card danger">
+                    <span class="metric-label">Incidencias</span>
+                    <strong>1</strong>
+                    <small>Prioridad alta</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ESTADO DE LAS SALAS
+        ====================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+
+                <div>
+                    <h3>Estado de las salas</h3>
+                    <p>
+                        Supervisión individual de cada sala durante la jornada.
+                    </p>
+                </div>
+
+                <span class="block-info">
+                    7 salas
+                </span>
+
+            </div>
+
+
+            <div class="room-grid">
+
+                <!-- =================================================
+                     SALA 1
+                ================================================== -->
+                <article class="room-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type">REGULAR</span>
+                            <h4>Sala 1</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Minecraft</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>14:30</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>82%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>98 / 120</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>17:00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA 2
+                ================================================== -->
+                <article class="room-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type">REGULAR</span>
+                            <h4>Sala 2</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Avatar</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>16:30</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>68%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>82 / 120</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>19:00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA 3
+                ================================================== -->
+                <article class="room-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type">REGULAR</span>
+                            <h4>Sala 3</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Mario Bros</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>16:00</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>41%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>49 / 120</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>18:00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA 4
+                ================================================== -->
+                <article class="room-card warning-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type">REGULAR</span>
+                            <h4>Sala 4</h4>
+                        </div>
+
+                        <span class="status-tag warning">
+                            Atención
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Estado actual</span>
+                        <strong>Sin función</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>—</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>0%</strong>
+                        </div>
+
+                        <div>
+                            <span>Incidencia</span>
+                            <strong>Proyección</strong>
+                        </div>
+
+                        <div>
+                            <span>Responsable</span>
+                            <strong>Técnico</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="incidencias" class="button warning-button">
+                            Revisar incidencia
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA 5
+                ================================================== -->
+                <article class="room-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type">REGULAR</span>
+                            <h4>Sala 5</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Terror Night</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>21:30</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>43%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>52 / 120</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>23:30</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA VIP 1
+                ================================================== -->
+                <article class="room-card vip-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type vip">
+                                VIP
+                            </span>
+
+                            <h4>Sala VIP 1</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Minecraft</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>18:30</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>46 / 50</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>21:00</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SALA VIP 2
+                ================================================== -->
+                <article class="room-card vip-card">
+
+                    <div class="room-header">
+
+                        <div>
+                            <span class="room-type vip">
+                                VIP
+                            </span>
+
+                            <h4>Sala VIP 2</h4>
+                        </div>
+
+                        <span class="status-tag success">
+                            Operativa
+                        </span>
+
+                    </div>
+
+                    <div class="room-movie">
+                        <span>Función actual</span>
+                        <strong>Avatar</strong>
+                    </div>
+
+                    <div class="room-data">
+
+                        <div>
+                            <span>Función</span>
+                            <strong>20:00</strong>
+                        </div>
+
+                        <div>
+                            <span>Ocupación</span>
+                            <strong>76%</strong>
+                        </div>
+
+                        <div>
+                            <span>Asientos</span>
+                            <strong>38 / 50</strong>
+                        </div>
+
+                        <div>
+                            <span>Próxima</span>
+                            <strong>22:30</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="room-action">
+                        <a href="#" class="button">
+                            Supervisar sala
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             OCUPACIÓN
+        ====================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+
+                <div>
+                    <h3>Ocupación por sala</h3>
+                    <p>
+                        Comparativa de ocupación registrada en las salas.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="occupancy-panel">
+
+                <div class="occupancy-summary">
+
+                    <div>
+                        <span>Promedio general</span>
+                        <strong>72%</strong>
+                    </div>
+
+                    <div>
+                        <span>Mayor ocupación</span>
+                        <strong>VIP 1 · 92%</strong>
+                    </div>
+
+                    <div>
+                        <span>Menor ocupación</span>
+                        <strong>Sala 3 · 41%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="occupancy-bars">
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>Sala 1</span>
+                            <strong>82%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>Sala 2</span>
+                            <strong>68%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 68%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>Sala 3</span>
+                            <strong>41%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 41%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>Sala 5</span>
+                            <strong>43%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 43%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>VIP 1</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill vip-fill" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="bar-row">
+                        <div class="bar-label">
+                            <span>VIP 2</span>
+                            <strong>76%</strong>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill vip-fill" style="width: 76%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SUPERVISIÓN Y ACCIONES
+        ====================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+
+                <div>
+                    <h3>Supervisión de salas</h3>
+                    <p>
+                        Acciones disponibles para la gestión operativa.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <a href="operacion" class="action-card">
+
+                    <span class="action-icon">01</span>
+
+                    <div>
+                        <h4>Ver operación</h4>
+                        <p>
+                            Consultar funciones y actividad general.
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="incidencias" class="action-card">
+
+                    <span class="action-icon">02</span>
+
+                    <div>
+                        <h4>Incidencias</h4>
+                        <p>
+                            Revisar problemas registrados en las salas.
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="reportes" class="action-card">
+
+                    <span class="action-icon">03</span>
+
+                    <div>
+                        <h4>Reportes</h4>
+                        <p>
+                            Consultar rendimiento y ocupación.
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="pagina_principal" class="action-card">
+
+                    <span class="action-icon">04</span>
+
+                    <div>
+                        <h4>Centro de gestión</h4>
+                        <p>
+                            Regresar al resumen general de gerencia.
+                        </p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

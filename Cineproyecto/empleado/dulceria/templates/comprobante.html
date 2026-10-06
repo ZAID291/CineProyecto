@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Pro | Comprobante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='comprobante.css') }}">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>CINEMA</h1>
+            <p>DULCERÍA</p>
+        </div>
+        <nav>
+            <span class="menu-title">OPERACIÓN</span>
+            <a href="{{ url_for('pagina_principal') }}">
+                Página principal
+            </a>
+            <a href="{{ url_for('venta_productos') }}">
+                Venta de productos
+            </a>
+            <span class="menu-title">INVENTARIO</span>
+            <a href="{{ url_for('inventario') }}">
+                Inventario
+            </a>
+            <span class="menu-title">CAJA</span>
+            <a href="{{ url_for('cierre_caja') }}">
+                Cierre de caja
+            </a>
+        </nav>
+    </aside>
+
+<main>
+    <header class="header">
+        <div>
+            <h1>Comprobante</h1>
+            <p>
+                {% if confirmado %}
+                    Venta realizada correctamente
+                {% else %}
+                    Revisa los productos antes de confirmar la venta
+                {% endif %}
+            </p>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <section class="block">
+                {% for categoria, mensaje in messages %}
+                    <div class="alert {{ categoria }}">
+                        {{ mensaje }}
+                    </div>
+                {% endfor %}
+            </section>
+        {% endif %}
+    {% endwith %}
+
+    <section class="block">
+        <div class="block-title">
+            Resumen de venta
+        </div>
+
+        <div class="panel">
+            <div class="sale-info">
+                <div>
+                    <span>Fecha</span>
+                    <strong>
+                        {% if confirmado %}
+                            {{ venta.fecha_hora.strftime('%d/%m/%Y %H:%M') }}
+                        {% else %}
+                            {{ fecha_hora.strftime('%d/%m/%Y %H:%M') }}
+                        {% endif %}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Método de pago</span>
+                    <strong>
+                        {% if confirmado %}
+                            {{ venta.metodo_pago }}
+                        {% else %}
+                            {{ metodo_pago }}
+                        {% endif %}
+                    </strong>
+                </div>
+
+                {% if confirmado %}
+                    <div>
+                        <span>Número de venta</span>
+                        <strong>
+                            #{{ venta.id_venta }}
+                        </strong>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Variante</th>
+                            <th>Tamaño</th>
+                            <th>Sabor</th>
+                            <th>Presentación</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% if confirmado %}
+                            {% for producto in detalles %}
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            {{ producto.producto }}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        {{ producto.variante }}
+                                    </td>
+                                    <td>
+                                        {{ producto.tamano or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.sabor or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.presentacion or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.cantidad }}
+                                    </td>
+                                    <td>
+                                        ${{ "%.2f"|format(producto.precio_unitario) }}
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            ${{ "%.2f"|format(producto.subtotal) }}
+                                        </strong>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            {% for producto in productos %}
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            {{ producto.producto }}
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        {{ producto.variante }}
+                                    </td>
+                                    <td>
+                                        {{ producto.tamano or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.sabor or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.presentacion or '-' }}
+                                    </td>
+                                    <td>
+                                        {{ producto.cantidad }}
+                                    </td>
+                                    <td>
+                                        ${{ "%.2f"|format(producto.precio) }}
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            ${{ "%.2f"|format(producto.subtotal) }}
+                                        </strong>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sale-total">
+                <span>
+                    Total de la venta
+                </span>
+                <strong>
+                    ${{ "%.2f"|format(total) }}
+                </strong>
+            </div>
+
+            <div class="sale-actions">
+                {% if confirmado %}
+                    <a
+                        href="{{ url_for('venta_productos') }}"
+                        class="button confirm-sale">
+                        Nueva venta
+                    </a>
+                {% else %}
+                    <a
+                        href="{{ url_for('venta_productos') }}"
+                        class="button cancel-sale">
+                        Regresar
+                    </a>
+
+                    <form
+                        action="{{ url_for('confirmar_venta') }}"
+                        method="POST">
+
+                        {% for producto in productos %}
+                            <input
+                                type="hidden"
+                                name="id_variante"
+                                value="{{ producto.id_variante }}">
+
+                            <input
+                                type="hidden"
+                                name="cantidad"
+                                value="{{ producto.cantidad }}">
+                        {% endfor %}
+
+                        <input
+                            type="hidden"
+                            name="metodo_pago"
+                            value="{{ metodo_pago }}">
+
+                        <button
+                            type="submit"
+                            class="button confirm-sale">
+                            Confirmar venta
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</main>
+```
+
+</body>
+</html>
