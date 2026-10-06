@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
-import mysql.connector
-from mysql.connector import Error
+import psycopg2
+from psycopg2.extras import RealDictCursor
 from decimal import Decimal
 from datetime import datetime
 
@@ -10,33 +10,42 @@ app.secret_key = os.environ.get("SECRET_KEY", "cinema_pro_dulceria")
 
 # ==========================================================
 # CONFIGURACIÓN DE LA BASE DE DATOS
+# En Render se usa DATABASE_URL (Internal Database URL);
+# en local se usan las variables DB_* o sus valores por defecto.
 # ==========================================================
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 DB_CONFIG = {
     "host": os.environ.get("DB_HOST", "localhost"),
-    "port": int(os.environ.get("DB_PORT", "3306")),
-    "user": os.environ.get("DB_USER", "root"),
+    "port": int(os.environ.get("DB_PORT", "5432")),
+    "user": os.environ.get("DB_USER", "postgres"),
     "password": os.environ.get("DB_PASSWORD", ""),
-    "database": os.environ.get("DB_NAME", "cinema_pro_dulceria")
+    "dbname": os.environ.get("DB_NAME", "cinema_pro_dulceria")
 }
 
 
 # ==========================================================
-# CONEXIÓN A MYSQL
+# CONEXIÓN A POSTGRESQL
 # ==========================================================
 
 def get_connection():
     try:
-        connection = mysql.connector.connect(
+        if DATABASE_URL:
+            return psycopg2.connect(
+                DATABASE_URL,
+                cursor_factory=RealDictCursor,
+                connect_timeout=10
+            )
+
+        return psycopg2.connect(
             **DB_CONFIG,
-            connection_timeout=10
+            cursor_factory=RealDictCursor,
+            connect_timeout=10
         )
 
-        if connection.is_connected():
-            return connection
-
-    except Error as error:
-        print(f"Error de conexión a MySQL: {error}")
+    except psycopg2.Error as error:
+        print(f"Error de conexión a PostgreSQL: {error}")
 
     return None
 
@@ -54,7 +63,7 @@ def pagina_principal():
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -125,7 +134,7 @@ def pagina_principal():
             SELECT
                 COUNT(*) AS ventas_dia
             FROM ventas_dulceria
-            WHERE DATE(fecha_hora) = CURDATE()
+            WHERE DATE(fecha_hora) = CURRENT_DATE
         """
 
         cursor.execute(query_ventas)
@@ -161,7 +170,7 @@ def venta_productos():
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -234,7 +243,7 @@ def comprobante_preview():
             )
             return redirect(url_for("venta_productos"))
 
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor()
 
         # --------------------------------------------------
         # RECIBIR DATOS DEL FORMULARIO
@@ -472,7 +481,7 @@ def confirmar_venta():
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -600,6 +609,7 @@ def confirmar_venta():
                 %s,
                 %s
             )
+            RETURNING id_venta
         """
 
         cursor.execute(
@@ -610,7 +620,7 @@ def confirmar_venta():
             )
         )
 
-        id_venta = cursor.lastrowid
+        id_venta = cursor.fetchone()["id_venta"]
 
         # ==================================================
         # INSERTAR DETALLE Y DESCONTAR INVENTARIO
@@ -716,7 +726,7 @@ def comprobante(id_venta):
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -821,7 +831,7 @@ def inventario():
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -916,7 +926,7 @@ def cierre_caja():
     if connection is None:
         return "No se pudo conectar con la base de datos."
 
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
     try:
 
@@ -934,7 +944,7 @@ def cierre_caja():
                         FROM detalle_venta_dulceria d
                         INNER JOIN ventas_dulceria v2
                             ON d.id_venta = v2.id_venta
-                        WHERE DATE(v2.fecha_hora) = CURDATE()
+                        WHERE DATE(v2.fecha_hora) = CURRENT_DATE
                     ),
                     0
                 ) AS productos_vendidos,
@@ -946,7 +956,7 @@ def cierre_caja():
 
             FROM ventas_dulceria
 
-            WHERE DATE(fecha_hora) = CURDATE()
+            WHERE DATE(fecha_hora) = CURRENT_DATE
         """
 
         cursor.execute(query_resumen)
@@ -968,7 +978,7 @@ def cierre_caja():
 
             FROM ventas_dulceria
 
-            WHERE DATE(fecha_hora) = CURDATE()
+            WHERE DATE(fecha_hora) = CURRENT_DATE
                 AND metodo_pago = 'EFECTIVO'
         """
 
@@ -991,7 +1001,7 @@ def cierre_caja():
 
             FROM ventas_dulceria
 
-            WHERE DATE(fecha_hora) = CURDATE()
+            WHERE DATE(fecha_hora) = CURRENT_DATE
                 AND metodo_pago = 'TARJETA'
         """
 
