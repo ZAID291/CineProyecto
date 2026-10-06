@@ -2,6 +2,5 @@ services:
   - type: web
     name: cineproyecto
     runtime: python
-    rootDir: Cineproyecto
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
