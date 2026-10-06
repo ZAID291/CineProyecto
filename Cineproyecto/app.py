@@ -1,6 +1,25 @@
-from flask import Flask, render_template, redirect, url_for
+import os
+
+from flask import Flask, render_template, redirect, url_for, abort
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+
+from empleado.dulceria.app import app as dulceria_app
+from empleado.taquilla.app import app as taquilla_app
 
 app = Flask(__name__)
+
+TEMPLATES_DIR = os.path.join(app.root_path, "templates")
+
+
+def paginas_de(carpeta):
+    """Nombres (sin .html) de las páginas que existen en templates/<carpeta>."""
+    ruta = os.path.join(TEMPLATES_DIR, carpeta)
+    return {f[:-5] for f in os.listdir(ruta) if f.endswith(".html")}
+
+
+PAGINAS_DUENO = paginas_de("dueno")
+PAGINAS_DUENO_EMPLEADOS = paginas_de("dueno/empleados")
+PAGINAS_GERENCIA = paginas_de("gerencia")
 
 
 # LOGIN ----------------------------------------------------
@@ -11,84 +30,54 @@ def inicio():
     return render_template("login.html")
 
 
-# DUEÑO --------------------------------------------------- 
+# DUEÑO ---------------------------------------------------
 
 
 @app.route("/dueno")
+@app.route("/dueno/")
 def dueno():
-    return redirect(url_for("pagina_principal_dueno"))
+    return redirect(url_for("pagina_dueno", pagina="pagina_principal"))
 
 
-@app.route("/dueno/pagina-principal")
-def pagina_principal_dueno():
-    return render_template("dueño/pagina_principal.html")
+@app.route("/dueno/<pagina>")
+def pagina_dueno(pagina):
+    if pagina not in PAGINAS_DUENO:
+        abort(404)
+    return render_template(f"dueno/{pagina}.html")
 
 
-@app.route("/dueno/alertas")
-def alertas():
-    return render_template("dueño/alertas.html")
+@app.route("/dueno/empleados/<pagina>")
+def pagina_dueno_empleados(pagina):
+    if pagina not in PAGINAS_DUENO_EMPLEADOS:
+        abort(404)
+    return render_template(f"dueno/empleados/{pagina}.html")
 
 
-@app.route("/dueno/boletos")
-def boletos():
-    return render_template("dueño/boletos.html")
+# GERENCIA ------------------------------------------------
 
 
-@app.route("/dueno/cartelera")
-def cartelera():
-    return render_template("dueño/cartelera.html")
+@app.route("/gerencia")
+@app.route("/gerencia/")
+def gerencia():
+    return redirect(url_for("pagina_gerencia", pagina="pagina_principal"))
 
 
-@app.route("/dueno/dulceria")
-def dulceria_dueno():
-    return render_template("dueño/dulceria.html")
+@app.route("/gerencia/<pagina>")
+def pagina_gerencia(pagina):
+    if pagina not in PAGINAS_GERENCIA:
+        abort(404)
+    return render_template(f"gerencia/{pagina}.html")
 
 
-@app.route("/dueno/finanzas")
-def finanzas():
-    return render_template("dueño/finanzas.html")
+# EMPLEADO ------------------------------------------------
+# Dulcería y Taquilla son apps Flask independientes montadas
+# bajo /empleado/dulceria y /empleado/taquilla.
 
-
-@app.route("/dueno/inventario")
-def inventario():
-    return render_template("dueño/inventario.html")
-
-
-@app.route("/dueno/operaciones")
-def operaciones():
-    return render_template("dueño/operaciones.html")
-
-
-@app.route("/dueno/personal")
-def personal():
-    return render_template("dueño/personal.html")
-
-
-@app.route("/dueno/salas")
-def salas():
-    return render_template("dueño/salas.html")
-
-# empleado --------------------------------------
-
-@app.route("/empleado")
-def empleado():
-    return redirect(url_for("pagina_principal_empleado"))
-
-
-@app.route("/empleado/pagina-principal")
-def pagina_principal_empleado():
-    return render_template("empleado/pagina_principal.html")
-
-
-@app.route("/empleado/dulceria")
-def dulceria_empleado():
-    return render_template("empleado/dulceria.html")
-
-
-@app.route("/empleado/taquilla")
-def taquilla():
-    return render_template("empleado/taquilla.html")
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
+    "/empleado/dulceria": dulceria_app,
+    "/empleado/taquilla": taquilla_app,
+})
 
 
 if __name__ == "__main__":
-    app.run(debug=True,host="127.0.0.1",port=5000)
+    app.run(debug=True, host="127.0.0.1", port=5000)
