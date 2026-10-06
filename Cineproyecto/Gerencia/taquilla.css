@@ -1,0 +1,1227 @@
+/* =========================================================
+   CINEMA PRO — GERENCIA
+   taquilla.css
+   Módulo de Taquilla
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --background: #0f1118;
+
+    --panel: rgba(29, 33, 45, 0.85);
+
+    --panel-hover: rgba(37, 42, 56, 0.95);
+
+    --primary: #e50914;
+
+    --secondary: #ffc857;
+
+    --text: #ffffff;
+
+    --text-soft: #98a2b3;
+
+    --border: rgba(255, 255, 255, 0.05);
+
+    --green: #35d07f;
+
+    --yellow: #ffc857;
+
+    --red: #ff4d5a;
+
+    --blue: #5b8def;
+
+    --shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+    --radius: 16px;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Montserrat", Arial, sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(229, 9, 20, 0.08),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 200, 87, 0.05),
+            transparent 30%
+        ),
+
+        var(--background);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    padding: 28px 18px;
+
+    background: rgba(16, 18, 27, 0.96);
+
+    border-right: 1px solid var(--border);
+
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+
+    overflow-y: auto;
+
+    z-index: 100;
+
+}
+
+
+/* =========================================================
+   LOGOTIPO
+   ========================================================= */
+
+.logo {
+
+    padding: 8px 14px 30px;
+
+}
+
+
+.logo h1 {
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--text);
+
+}
+
+
+.logo p {
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.menu-title {
+
+    margin: 22px 12px 7px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--text-soft);
+
+}
+
+
+nav a {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    color: var(--text-soft);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition:
+
+        background 0.2s ease,
+
+        color 0.2s ease,
+
+        transform 0.2s ease;
+
+}
+
+
+nav a:hover {
+
+    color: var(--text);
+
+    background: var(--panel-hover);
+
+    transform: translateX(2px);
+
+}
+
+
+nav a.active {
+
+    color: var(--text);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(229, 9, 20, 0.22),
+            rgba(229, 9, 20, 0.06)
+        );
+
+    border-left: 3px solid var(--primary);
+
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+main {
+
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    padding: 34px 42px 60px;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.header h1 {
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.header p {
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+}
+
+
+.header-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+    padding: 13px 18px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+}
+
+
+.header-info span {
+
+    font-size: 10px;
+
+    color: var(--text-soft);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.header-info strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   BLOQUES
+   ========================================================= */
+
+.block {
+
+    margin-bottom: 30px;
+
+}
+
+
+.block-title {
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   MÉTRICAS
+   ========================================================= */
+
+.metric-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 14px;
+
+}
+
+
+.metric-card {
+
+    min-height: 135px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    transition:
+
+        transform 0.2s ease,
+
+        background 0.2s ease,
+
+        border-color 0.2s ease;
+
+}
+
+
+.metric-card:hover {
+
+    background: var(--panel-hover);
+
+    border-color: rgba(255, 255, 255, 0.08);
+
+    transform: translateY(-2px);
+
+}
+
+
+.metric-card span {
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.metric-card strong {
+
+    margin: 10px 0;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+}
+
+
+.metric-card small {
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+}
+
+
+.metric-card.warning {
+
+    border-color:
+        rgba(255, 200, 87, 0.22);
+
+}
+
+
+.metric-card.warning strong {
+
+    color: var(--yellow);
+
+}
+
+
+/* =========================================================
+   PANELES
+   ========================================================= */
+
+.panel {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   RESUMEN DE HORARIOS
+   ========================================================= */
+
+.schedule-panel {
+
+    padding: 25px;
+
+}
+
+
+.schedule-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.schedule-summary div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.schedule-summary span {
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+}
+
+
+.schedule-summary strong {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.schedule-bars {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.bar-row {
+
+    display: grid;
+
+    grid-template-columns:
+        115px 1fr 45px;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.bar-row > span {
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+}
+
+
+.bar-row > strong {
+
+    font-size: 10px;
+
+    text-align: right;
+
+}
+
+
+.bar {
+
+    height: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.bar-fill {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            #ff3b45
+        );
+
+    border-radius: inherit;
+
+}
+
+
+/* =========================================================
+   TABLAS
+   ========================================================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+thead {
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+}
+
+
+th {
+
+    padding: 15px 18px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+td {
+
+    padding: 16px 18px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+tbody tr {
+
+    transition: background 0.2s ease;
+
+}
+
+
+tbody tr:hover {
+
+    background: var(--panel-hover);
+
+}
+
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.green {
+
+    color: var(--green) !important;
+
+    font-weight: 700;
+
+}
+
+
+.yellow {
+
+    color: var(--yellow) !important;
+
+    font-weight: 700;
+
+}
+
+
+.red {
+
+    color: var(--red) !important;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   ETIQUETAS DE ESTADO
+   ========================================================= */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+.status.green {
+
+    background:
+        rgba(53, 208, 127, 0.10);
+
+}
+
+
+.status.yellow {
+
+    background:
+        rgba(255, 200, 87, 0.10);
+
+}
+
+
+.status.red {
+
+    background:
+        rgba(255, 77, 90, 0.10);
+
+}
+
+
+/* =========================================================
+   INDICADORES POR EMPLEADO
+   ========================================================= */
+
+.employee-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+}
+
+
+.employee-card {
+
+    min-height: 190px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+
+        background 0.2s ease,
+
+        transform 0.2s ease,
+
+        border-color 0.2s ease;
+
+}
+
+
+.employee-card:hover {
+
+    background: var(--panel-hover);
+
+    transform: translateY(-2px);
+
+}
+
+
+.employee-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-bottom: 17px;
+
+    margin-bottom: 17px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.employee-header strong {
+
+    font-size: 14px;
+
+}
+
+
+.employee-header span {
+
+    font-size: 12px;
+
+}
+
+
+.employee-data {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.employee-data div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.employee-data span {
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+}
+
+
+.employee-data strong {
+
+    font-size: 11px;
+
+    text-align: right;
+
+}
+
+
+/* =========================================================
+   ACCIONES DE SUPERVISIÓN
+   ========================================================= */
+
+.action-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.action-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 145px;
+
+    padding: 21px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    box-shadow: var(--shadow);
+
+    transition:
+
+        background 0.2s ease,
+
+        transform 0.2s ease,
+
+        border-color 0.2s ease;
+
+}
+
+
+.action-card:hover {
+
+    background: var(--panel-hover);
+
+    border-color:
+        rgba(229, 9, 20, 0.22);
+
+    transform: translateY(-2px);
+
+}
+
+
+.action-card span {
+
+    margin-bottom: 14px;
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.action-card strong {
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+}
+
+
+.action-card small {
+
+    margin-top: auto;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1200px
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .metric-grid {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+    }
+
+
+    .employee-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .action-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 210px;
+
+    }
+
+
+    main {
+
+        margin-left: 210px;
+
+        width: calc(100% - 210px);
+
+        padding: 28px;
+
+    }
+
+
+    .header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .header-info {
+
+        align-items: flex-start;
+
+    }
+
+
+    .metric-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .schedule-summary {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 650px
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+
+    main {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 25px 18px 40px;
+
+    }
+
+
+    .metric-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .employee-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .action-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .schedule-panel {
+
+        padding: 18px;
+
+    }
+
+
+    .bar-row {
+
+        grid-template-columns:
+            100px 1fr 40px;
+
+        gap: 8px;
+
+    }
+
+
+    .panel {
+
+        overflow-x: auto;
+
+    }
+
+
+    table {
+
+        min-width: 850px;
+
+    }
+
+}
