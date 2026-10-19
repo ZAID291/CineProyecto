@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cinema Pro | Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('login_css') }}"
+    >
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <main class="container">
+
+        <!-- Identidad del sistema -->
+        <section class="branding">
+            <span class="tag">SISTEMA EJECUTIVO</span>
+
+            <h1>CINEMA PRO</h1>
+
+            <p>
+                Plataforma de administración para la gestión
+                operativa, financiera y estratégica del cine.
+            </p>
+
+            <div class="info-box">
+                <h3>Estado del sistema</h3>
+                <p>🟢 Servicios disponibles</p>
+            </div>
+        </section>
+
+        <!-- Formulario de acceso -->
+        <section class="login-panel">
+            <h2>Iniciar sesión</h2>
+
+            <p>Accede a tu panel administrativo.</p>
+
+            <!-- Mensajes de Flask -->
+            {% with mensajes = get_flashed_messages(with_categories=true) %}
+                {% for categoria, mensaje in mensajes %}
+                    <div
+                        class="mensaje {{ categoria }}"
+                        role="alert"
+                    >
+                        {{ mensaje }}
+                    </div>
+                {% endfor %}
+            {% endwith %}
+
+            <!-- Formulario de login -->
+            <form
+                action="{{ url_for('inicio') }}"
+                method="POST"
+            >
+                <!-- Protección CSRF -->
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token() }}"
+                >
+
+                <!-- Correo electrónico -->
+                <div class="input-group">
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="correo@empresa.com"
+                        autocomplete="username"
+                        maxlength="150"
+                        required
+                    >
+                </div>
+
+                <!-- Contraseña -->
+                <div class="input-group">
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <!-- Opciones adicionales -->
+                <div class="options">
+                    <label for="recordarme">
+                        <input
+                            type="checkbox"
+                            id="recordarme"
+                            name="recordarme"
+                        >
+                        Recordarme
+                    </label>
+
+                    <a
+                        href="#"
+                        aria-disabled="true"
+                        onclick="return false;"
+                    >
+                        Recuperar contraseña
+                    </a>
+                </div>
+
+                <!-- Enviar formulario -->
+                <button type="submit">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <!-- Pie de página -->
+            <div class="footer">
+                Cinema Pro · Versión 1.0
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+    Cinema Pro | Dulcería
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='pagina_principal.css') }}">
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+<div class="logo">
+
+    <h1>
+        CINEMA
+    </h1>
+
+    <p>
+        DULCERÍA
+    </p>
+
+</div>
+
+
+<nav>
+
+    <span class="menu-title">
+        OPERACIÓN
+    </span>
+
+
+    <a
+        href="{{ url_for('pagina_principal') }}"
+        class="active"
+    >
+        Página principal
+    </a>
+
+
+    <a
+        href="{{ url_for('venta_productos') }}"
+    >
+        Venta de productos
+    </a>
+
+
+    <span class="menu-title">
+        INVENTARIO
+    </span>
+
+
+    <a
+        href="{{ url_for('inventario') }}"
+    >
+        Inventario
+    </a>
+
+
+    <span class="menu-title">
+        CAJA
+    </span>
+
+
+    <a
+        href="{{ url_for('cierre_caja') }}"
+    >
+        Cierre de caja
+    </a>
+
+</nav>
+
+</aside>
+
+<main>
+
+<header class="header">
+<div>
+
+    <h1>
+        Dulcería
+    </h1>
+
+    <p>
+        Productos disponibles para venta
+    </p>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     RESUMEN DE DULCERÍA
+===================================================== -->
+
+<section class="block">
+
+<div class="block-title">
+
+    Resumen de dulcería
+
+</div>
+
+
+<div class="inventory-summary">
+
+
+    <div class="summary-card">
+
+        <span>
+            Productos disponibles
+        </span>
+
+        <strong>
+            {{ productos_disponibles | default(8) }}
+        </strong>
+
+        <small>
+            Productos registrados
+        </small>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <span>
+            Productos por agotarse
+        </span>
+
+        <strong class="yellow">
+            {{ productos_bajos | default(2) }}
+        </strong>
+
+        <small>
+            Requieren atención
+        </small>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <span>
+            Ventas del día
+        </span>
+
+        <strong>
+            {{ ventas_dia | default(0) }}
+        </strong>
+
+        <small>
+            Ventas realizadas
+        </small>
+
+    </div>
+
+
+</div>
+</section>
+
+<!-- =====================================================
+     PRODUCTOS DISPONIBLES
+===================================================== -->
+
+<section class="block">
+
+<div class="block-title">
+
+    Productos disponibles
+
+</div>
+
+
+<div class="product-grid">
+
+
+    {% for producto in productos %}
+
+
+    <!-- =================================================
+         PRODUCTO
+    ================================================== -->
+
+    <div
+        class="product-card"
+        data-producto-id="{{ producto.id_producto }}"
+        data-variante-id="{{ producto.id_variante }}"
+        data-producto="{{ producto.nombre }}"
+    >
+
+
+        <div class="product-info">
+
+
+            <span>
+
+                {{ producto.categoria }}
+
+            </span>
+
+
+            <h3>
+
+                {{ producto.nombre }}
+
+            </h3>
+
+
+            <p>
+
+                {{ producto.descripcion }}
+
+            </p>
+
+
+        </div>
+
+
+        <!-- =================================================
+             INFORMACIÓN DEL PRODUCTO
+        ================================================== -->
+
+        <div class="product-data">
+
+
+            <div>
+
+                <span>
+                    Variante
+                </span>
+
+                <strong>
+
+                    {{ producto.variante }}
+
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Precio
+                </span>
+
+                <strong>
+
+                    ${{ "%.2f"|format(producto.precio) }}
+
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Disponibles
+                </span>
+
+
+                {% if producto.existencia <= producto.stock_minimo %}
+
+                    <strong class="yellow">
+
+                        {{ producto.existencia }}
+
+                    </strong>
+
+                {% else %}
+
+                    <strong class="green">
+
+                        {{ producto.existencia }}
+
+                    </strong>
+
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             ACCIÓN DE VENTA
+        ================================================== -->
+
+        {% if producto.existencia > 0 %}
+
+
+            <a
+                href="{{ url_for(
+                    'venta_productos',
+                    producto_id=producto.id_producto,
+                    variante_id=producto.id_variante
+                ) }}"
+                class="button small-button"
+            >
+
+                Iniciar venta
+
+            </a>
+
+
+        {% else %}
+
+
+            <button
+                class="button small-button"
+                disabled
+            >
+
+                Agotado
+
+            </button>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+    {% else %}
+
+
+    <!-- =================================================
+         SIN PRODUCTOS
+    ================================================== -->
+
+    <div class="product-card">
+
+
+        <div class="product-info">
+
+
+            <span>
+                SIN DATOS
+            </span>
+
+
+            <h3>
+                No hay productos disponibles
+            </h3>
+
+
+            <p>
+                No se encontraron productos activos
+                en el inventario.
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+    {% endfor %}
+
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,2687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cinema Pro - Inventario
+    </title>
+    <link rel="stylesheet" href="inventario.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>CINEMA PRO</h1>
+            <p>ADMINISTRATIVE SYSTEM</p>
+        </div>
+        <nav>
+            <div class="menu-title">
+                GENERAL
+            </div>
+            <a href="pagina_principal.html">
+                ✦ Centro Ejecutivo
+            </a>
+            <a href="operaciones.html">
+                ◉ Operaciones
+            </a>
+            <a href="alertas.html">
+                ⚠︎ Alertas
+            </a>
+            <div class="menu-title">
+                CINE
+            </div>
+            <a href="salas.html">
+                ◫ Salas
+            </a>
+            <a href="cartelera.html">
+                ◈ Cartelera
+            </a>
+            <a href="boletos.html">
+                ⌘ Boletos
+            </a>
+            <a href="dulceria.html">
+                ◌ Dulcería
+            </a>
+            <a class="active" href="inventario.html">
+                ⊞ Inventario
+            </a>
+            <div class="menu-title">
+                EMPRESA
+            </div>
+            <a href="personal.html">
+                ✉︎ Personal
+            </a>
+            <a href="finanzas.html">
+                ◇ Finanzas
+            </a>
+            <a href="reportes.html">
+                ▣ Reportes
+            </a>
+            <a href="configuracion.html">
+                ⚙︎ Configuración
+            </a>
+        </nav>
+    </aside>
+    <!-- CONTENIDO -->
+    <main>
+        <!-- HEADER -->
+        <header class="header">
+            <div>
+                <h1>
+                    Inventario
+                </h1>
+                <p>
+                    Control estratégico del inventario, capital invertido y rotación de productos.
+                </p>
+            </div>
+            <button class="button">
+                Actualizar inventario
+            </button>
+        </header>
+        <!-- CONTEXTO -->
+        <section class="block">
+            <div class="block-title">
+                Información general
+            </div>
+            <div class="panel">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Sucursal
+                            </td>
+                            <td>
+                                Cinema Pro Centro
+                            </td>
+                            <td>
+                                Responsable
+                            </td>
+                            <td>
+                                Administración General
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Última actualización
+                            </td>
+                            <td>
+                                Hoy 09:15
+                            </td>
+                            <td>
+                                Estado del sistema
+                            </td>
+                            <td class="green">
+                                Inventario sincronizado
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- RESUMEN EJECUTIVO -->
+        <section class="block">
+            <div class="block-title">
+                Resumen ejecutivo del inventario
+            </div>
+            <div class="panel">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Indicador
+                            </th>
+                            <th>
+                                Resultado
+                            </th>
+                            <th>
+                                Estado
+                            </th>
+                            <th>
+                                Interpretación
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Valor total del inventario
+                            </td>
+                            <td class="green">
+                                $485,200
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+                            </td>
+                            <td>
+                                Capital operativo saludable.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Productos registrados
+                            </td>
+                            <td>
+                                142
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+                            </td>
+                            <td>
+                                Inventario completo.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Productos críticos
+                            </td>
+                            <td class="red">
+                                8
+                            </td>
+                            <td>
+                                <span class="tag tag-red">
+                                    Atención
+                                </span>
+                            </td>
+                            <td>
+                                Riesgo de desabasto.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Sobreinventario
+                            </td>
+                            <td class="yellow">
+                                12
+                            </td>
+                            <td>
+                                <span class="tag tag-yellow">
+                                    Revisar
+                                </span>
+                            </td>
+                            <td>
+                                Capital inmovilizado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Productos por caducar
+                            </td>
+                            <td class="red">
+                                6
+                            </td>
+                            <td>
+                                <span class="tag tag-red">
+                                    Urgente
+                                </span>
+                            </td>
+                            <td>
+                                Posibles pérdidas.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Rotación promedio
+                            </td>
+                            <td class="green">
+                                18 días
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Buena
+                                </span>
+                            </td>
+                            <td>
+                                Flujo saludable.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- INVENTARIO POR CATEGORIAS -->
+        <section class="block">
+            <div class="block-title">
+                Valor del inventario por categoría
+            </div>
+            <div class="panel">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Categoría
+                            </th>
+                            <th>
+                                Valor almacenado
+                            </th>
+                            <th>
+                                Rotación
+                            </th>
+                            <th>
+                                Productos
+                            </th>
+                            <th>
+                                Estado
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Palomitas
+                            </td>
+                            <td>
+                                $82,000
+                            </td>
+                            <td class="green">
+                                Alta
+                            </td>
+                            <td>
+                                14
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Refrescos
+                            </td>
+                            <td>
+                                $95,000
+                            </td>
+                            <td class="green">
+                                Alta
+                            </td>
+                            <td>
+                                26
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dulces
+                            </td>
+                            <td>
+                                $40,000
+                            </td>
+                            <td class="yellow">
+                                Media
+                            </td>
+                            <td>
+                                32
+                            </td>
+                            <td>
+                                <span class="tag tag-yellow">
+                                    Buena
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nachos
+                            </td>
+                            <td>
+                                $18,000
+                            </td>
+                            <td class="yellow">
+                                Baja
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                <span class="tag tag-yellow">
+                                    Revisar
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Hot Dogs
+                            </td>
+                            <td>
+                                $22,000
+                            </td>
+                            <td class="red">
+                                Muy baja
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                <span class="tag tag-red">
+                                    Riesgo
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Limpieza
+                            </td>
+                            <td>
+                                $9,500
+                            </td>
+                            <td>
+                                Normal
+                            </td>
+                            <td>
+                                18
+                            </td>
+                            <td>
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+                <!-- PRODUCTOS INDIVIDUALES -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Inventario por producto
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Producto
+                            </th>
+
+                            <th>
+                                Existencia
+                            </th>
+
+                            <th>
+                                Stock mínimo
+                            </th>
+
+                            <th>
+                                Consumo semanal
+                            </th>
+
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Maíz Palomero
+                            </td>
+
+                            <td>
+                                40 kg
+                            </td>
+
+                            <td>
+                                80 kg
+                            </td>
+
+                            <td>
+                                65 kg
+                            </td>
+
+                            <td>
+                                $18,000
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Crítico
+                                </span>
+
+                            </td>
+
+                            <td class="red">
+                                Comprar hoy
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Mantequilla Líquida
+                            </td>
+
+                            <td>
+                                32 L
+                            </td>
+
+                            <td>
+                                25 L
+                            </td>
+
+                            <td>
+                                14 L
+                            </td>
+
+                            <td>
+                                $4,500
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Mantener
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Refresco Cola
+                            </td>
+
+                            <td>
+                                220 pzas
+                            </td>
+
+                            <td>
+                                150 pzas
+                            </td>
+
+                            <td>
+                                95 pzas
+                            </td>
+
+                            <td>
+                                $16,000
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Mantener
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Refresco Naranja
+                            </td>
+
+                            <td>
+                                110 pzas
+                            </td>
+
+                            <td>
+                                90 pzas
+                            </td>
+
+                            <td>
+                                62 pzas
+                            </td>
+
+                            <td>
+                                $8,200
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Vigilar
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Queso para Nachos
+                            </td>
+
+                            <td>
+                                12 bolsas
+                            </td>
+
+                            <td>
+                                20 bolsas
+                            </td>
+
+                            <td>
+                                18 bolsas
+                            </td>
+
+                            <td>
+                                $3,500
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Bajo
+                                </span>
+
+                            </td>
+
+                            <td class="red">
+                                Comprar
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Salchichas
+                            </td>
+
+                            <td>
+                                180 pzas
+                            </td>
+
+                            <td>
+                                60 pzas
+                            </td>
+
+                            <td>
+                                25 pzas
+                            </td>
+
+                            <td>
+                                $8,500
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Exceso
+                                </span>
+
+                            </td>
+
+                            <td class="yellow">
+                                Reducir compras
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Vasos Grandes
+                            </td>
+
+                            <td>
+                                960 pzas
+                            </td>
+
+                            <td>
+                                350 pzas
+                            </td>
+
+                            <td>
+                                420 pzas
+                            </td>
+
+                            <td>
+                                $12,600
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Mantener
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Dulces Premium
+                            </td>
+
+                            <td>
+                                240 pzas
+                            </td>
+
+                            <td>
+                                90 pzas
+                            </td>
+
+                            <td>
+                                30 pzas
+                            </td>
+
+                            <td>
+                                $11,000
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Baja rotación
+                                </span>
+
+                            </td>
+
+                            <td class="yellow">
+                                Promocionar
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- PRODUCTOS CON MAYOR CAPITAL -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Productos con mayor inversión económica
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Posición
+                            </th>
+
+                            <th>
+                                Producto
+                            </th>
+
+                            <th>
+                                Capital invertido
+                            </th>
+
+                            <th>
+                                Participación
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+                                Refrescos
+                            </td>
+
+                            <td class="green">
+                                $95,000
+                            </td>
+
+                            <td>
+                                19.6%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                2
+                            </td>
+
+                            <td>
+                                Palomitas
+                            </td>
+
+                            <td>
+                                $82,000
+                            </td>
+
+                            <td>
+                                16.9%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                3
+                            </td>
+
+                            <td>
+                                Vasos
+                            </td>
+
+                            <td>
+                                $54,000
+                            </td>
+
+                            <td>
+                                11.1%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td>
+                                Dulces
+                            </td>
+
+                            <td>
+                                $40,000
+                            </td>
+
+                            <td>
+                                8.2%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Vigilar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                5
+                            </td>
+
+                            <td>
+                                Envases
+                            </td>
+
+                            <td>
+                                $32,000
+                            </td>
+
+                            <td>
+                                6.6%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- CAPITAL INMOVILIZADO -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Productos que inmovilizan capital
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Producto
+                            </th>
+
+                            <th>
+                                Valor detenido
+                            </th>
+
+                            <th>
+                                Días sin rotación
+                            </th>
+
+                            <th>
+                                Riesgo
+                            </th>
+
+                            <th>
+                                Decisión
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Hot Dogs
+                            </td>
+
+                            <td>
+                                $22,000
+                            </td>
+
+                            <td>
+                                26 días
+                            </td>
+
+                            <td class="red">
+                                Alto
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Reducir compras
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Nachos
+                            </td>
+
+                            <td>
+                                $18,000
+                            </td>
+
+                            <td>
+                                21 días
+                            </td>
+
+                            <td class="yellow">
+                                Medio
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Promocionar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Dulces Premium
+                            </td>
+
+                            <td>
+                                $11,000
+                            </td>
+
+                            <td>
+                                19 días
+                            </td>
+
+                            <td class="yellow">
+                                Medio
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Liquidar inventario
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Envases Especiales
+                            </td>
+
+                            <td>
+                                $8,400
+                            </td>
+
+                            <td>
+                                17 días
+                            </td>
+
+                            <td>
+                                Moderado
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Controlar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+                <!-- INVENTARIO RELACIONADO CON CARTELERA -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Consumo de inventario por película
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Película
+                            </th>
+
+                            <th>
+                                Producto principal
+                            </th>
+
+                            <th>
+                                Consumo semanal
+                            </th>
+
+                            <th>
+                                Inventario restante
+                            </th>
+
+                            <th>
+                                Riesgo
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Minecraft
+                            </td>
+
+                            <td>
+                                Palomitas / Combos
+                            </td>
+
+                            <td>
+                                Muy alto
+                            </td>
+
+                            <td class="red">
+                                40 kg
+                            </td>
+
+                            <td class="red">
+                                Desabasto
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Comprar hoy
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Mario Bros
+                            </td>
+
+                            <td>
+                                Combos Familiares
+                            </td>
+
+                            <td>
+                                Alto
+                            </td>
+
+                            <td>
+                                85 unidades
+                            </td>
+
+                            <td class="yellow">
+                                Medio
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Vigilar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Avatar
+                            </td>
+
+                            <td>
+                                Refrescos Grandes
+                            </td>
+
+                            <td>
+                                Alto
+                            </td>
+
+                            <td>
+                                180 unidades
+                            </td>
+
+                            <td class="green">
+                                Correcto
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Mantener
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Terror Night
+                            </td>
+
+                            <td>
+                                Nachos
+                            </td>
+
+                            <td>
+                                Medio
+                            </td>
+
+                            <td>
+                                110 unidades
+                            </td>
+
+                            <td>
+                                Normal
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Correcto
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Dune
+                            </td>
+
+                            <td>
+                                Dulces Premium
+                            </td>
+
+                            <td>
+                                Medio
+                            </td>
+
+                            <td>
+                                230 unidades
+                            </td>
+
+                            <td class="yellow">
+                                Baja rotación
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Promocionar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Superman
+                            </td>
+
+                            <td>
+                                Hot Dogs
+                            </td>
+
+                            <td>
+                                Bajo
+                            </td>
+
+                            <td class="yellow">
+                                180 unidades
+                            </td>
+
+                            <td class="yellow">
+                                Sobreinventario
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Reducir compras
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Último Reino
+                            </td>
+
+                            <td>
+                                Refrescos
+                            </td>
+
+                            <td>
+                                Muy bajo
+                            </td>
+
+                            <td class="red">
+                                260 unidades
+                            </td>
+
+                            <td class="red">
+                                Capital detenido
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Liquidar stock
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- PROVEEDORES -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Evaluación de proveedores
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Proveedor
+                            </th>
+
+                            <th>
+                                Productos
+                            </th>
+
+                            <th>
+                                Entrega
+                            </th>
+
+                            <th>
+                                Precio
+                            </th>
+
+                            <th>
+                                Cumplimiento
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Alimentos del Norte
+                            </td>
+
+                            <td>
+                                Palomitas
+                            </td>
+
+                            <td>
+                                2 días
+                            </td>
+
+                            <td>
+                                Competitivo
+                            </td>
+
+                            <td class="green">
+                                98%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Refrescos MX
+                            </td>
+
+                            <td>
+                                Bebidas
+                            </td>
+
+                            <td>
+                                1 día
+                            </td>
+
+                            <td>
+                                Competitivo
+                            </td>
+
+                            <td class="green">
+                                99%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Excelente
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Snacks Plus
+                            </td>
+
+                            <td>
+                                Nachos
+                            </td>
+
+                            <td>
+                                5 días
+                            </td>
+
+                            <td class="yellow">
+                                Alto
+                            </td>
+
+                            <td class="yellow">
+                                83%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Revisar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Food Service
+                            </td>
+
+                            <td>
+                                Hot Dogs
+                            </td>
+
+                            <td>
+                                6 días
+                            </td>
+
+                            <td class="red">
+                                Alto
+                            </td>
+
+                            <td class="red">
+                                79%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Cambiar proveedor
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- HISTORICO -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Comparativa histórica del inventario
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Indicador
+                            </th>
+
+                            <th>
+                                Hoy
+                            </th>
+
+                            <th>
+                                Semana anterior
+                            </th>
+
+                            <th>
+                                Mes anterior
+                            </th>
+
+                            <th>
+                                Tendencia
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Valor inventario
+                            </td>
+
+                            <td>
+                                $485,200
+                            </td>
+
+                            <td>
+                                $472,100
+                            </td>
+
+                            <td>
+                                $458,000
+                            </td>
+
+                            <td class="green">
+                                +5.9%
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Productos críticos
+                            </td>
+
+                            <td class="red">
+                                8
+                            </td>
+
+                            <td>
+                                5
+                            </td>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td class="red">
+                                Incremento
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Capital inmovilizado
+                            </td>
+
+                            <td>
+                                $51,000
+                            </td>
+
+                            <td>
+                                $42,000
+                            </td>
+
+                            <td>
+                                $36,000
+                            </td>
+
+                            <td class="red">
+                                +41%
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Rotación promedio
+                            </td>
+
+                            <td class="green">
+                                18 días
+                            </td>
+
+                            <td>
+                                21 días
+                            </td>
+
+                            <td>
+                                24 días
+                            </td>
+
+                            <td class="green">
+                                Mejorando
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+                <!-- PRODUCTOS PROXIMOS A CADUCAR -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Productos próximos a caducar
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Producto
+                            </th>
+
+                            <th>
+                                Existencia
+                            </th>
+
+                            <th>
+                                Caduca en
+                            </th>
+
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Riesgo
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Queso para Nachos
+                            </td>
+
+                            <td>
+                                12 bolsas
+                            </td>
+
+                            <td class="red">
+                                5 días
+                            </td>
+
+                            <td>
+                                $3,500
+                            </td>
+
+                            <td class="red">
+                                Alto
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Promocionar
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Salchichas
+                            </td>
+
+                            <td>
+                                180 piezas
+                            </td>
+
+                            <td class="yellow">
+                                9 días
+                            </td>
+
+                            <td>
+                                $8,500
+                            </td>
+
+                            <td class="yellow">
+                                Medio
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Reducir stock
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Dulces Premium
+                            </td>
+
+                            <td>
+                                240 piezas
+                            </td>
+
+                            <td>
+                                15 días
+                            </td>
+
+                            <td>
+                                $11,000
+                            </td>
+
+                            <td>
+                                Moderado
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Promoción
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- GRAFICAS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Comparativas visuales
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Capital por categoría
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Refrescos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:100%;"></div>
+
+                            </div>
+
+                            <strong>$95k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Palomitas</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:86%;"></div>
+
+                            </div>
+
+                            <strong>$82k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dulces</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:42%;"></div>
+
+                            </div>
+
+                            <strong>$40k</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Hot Dogs</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:23%;"></div>
+
+                            </div>
+
+                            <strong>$22k</strong>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Consumo por película
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Minecraft</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:100%;"></div>
+
+                            </div>
+
+                            <strong>100%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Mario Bros</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:90%;"></div>
+
+                            </div>
+
+                            <strong>90%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Avatar</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:72%;"></div>
+
+                            </div>
+
+                            <strong>72%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Superman</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:28%;"></div>
+
+                            </div>
+
+                            <strong>28%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Último Reino</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:18%;"></div>
+
+                            </div>
+
+                            <strong>18%</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Rotación de inventario
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Palomitas</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:95%;"></div>
+
+                            </div>
+
+                            <strong>Alta</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Refrescos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:88%;"></div>
+
+                            </div>
+
+                            <strong>Alta</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Nachos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:40%;"></div>
+
+                            </div>
+
+                            <strong>Media</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Hot Dogs</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:18%;"></div>
+
+                            </div>
+
+                            <strong>Baja</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Rendimiento de proveedores
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Refrescos MX</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:99%;"></div>
+
+                            </div>
+
+                            <strong>99%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Alimentos Norte</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:98%;"></div>
+
+                            </div>
+
+                            <strong>98%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Snacks Plus</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:83%;"></div>
+
+                            </div>
+
+                            <strong>83%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Food Service</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:79%;"></div>
+
+                            </div>
+
+                            <strong>79%</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- COMPRAS SUGERIDAS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Compras sugeridas para la próxima semana
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Producto</th>
+
+                            <th>Cantidad</th>
+
+                            <th>Inversión</th>
+
+                            <th>Motivo</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>Maíz Palomero</td>
+
+                            <td>120 kg</td>
+
+                            <td>$24,000</td>
+
+                            <td>Alta demanda por Minecraft.</td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>Queso para Nachos</td>
+
+                            <td>40 bolsas</td>
+
+                            <td>$8,400</td>
+
+                            <td>Inventario crítico.</td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>Refrescos Cola</td>
+
+                            <td>250 piezas</td>
+
+                            <td>$18,000</td>
+
+                            <td>Incremento esperado de ventas.</td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- RECOMENDACIONES -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Recomendaciones automáticas
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Área
+                            </th>
+
+                            <th>
+                                Situación
+                            </th>
+
+                            <th>
+                                Impacto
+                            </th>
+
+                            <th>
+                                Acción recomendada
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Palomitas
+                            </td>
+
+                            <td>
+                                Inventario insuficiente para la demanda.
+                            </td>
+
+                            <td class="red">
+                                Riesgo de perder ventas.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Comprar hoy
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Hot Dogs
+                            </td>
+
+                            <td>
+                                Sobreinventario y baja rotación.
+                            </td>
+
+                            <td class="yellow">
+                                Capital inmovilizado.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+                                    Reducir pedidos
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Minecraft
+                            </td>
+
+                            <td>
+                                Continúa impulsando el consumo.
+                            </td>
+
+                            <td class="green">
+                                Incremento de ingresos.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+                                    Incrementar stock
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Food Service
+                            </td>
+
+                            <td>
+                                Bajo cumplimiento en entregas.
+                            </td>
+
+                            <td class="red">
+                                Riesgo operativo.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Buscar proveedor
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Caducidades
+                            </td>
+
+                            <td>
+                                Seis productos próximos a vencer.
+                            </td>
+
+                            <td class="red">
+                                Posibles pérdidas.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+                                    Promoción inmediata
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>  

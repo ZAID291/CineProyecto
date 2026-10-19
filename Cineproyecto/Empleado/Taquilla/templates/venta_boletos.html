@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- CONFIGURACIÓN DEL DOCUMENTO -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cinema Pro | Venta de boletos
+    </title>
+
+    <!-- ESTILOS -->
+
+    <link rel="stylesheet" href="venta_boletos.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGOTIPO -->
+
+        <div class="logo">
+
+            <h1>
+                CINEMA
+            </h1>
+
+            <p>
+                TAQUILLA
+            </p>
+
+        </div>
+
+
+        <!-- NAVEGACIÓN -->
+
+        <nav>
+
+
+            <!-- OPERACIÓN -->
+
+            <span class="menu-title">
+                OPERACIÓN
+            </span>
+
+
+            <a href="pagina_principal.html">
+
+                Página principal
+
+            </a>
+
+
+            <a href="venta_boletos.html" class="active">
+
+                Venta de boletos
+
+            </a>
+
+
+            <!-- CAJA -->
+
+            <span class="menu-title">
+                CAJA
+            </span>
+
+
+            <a href="cierre_caja.html">
+
+                Cierre de caja
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="header">
+
+
+            <div>
+
+                <h1>
+                    Venta de boletos
+                </h1>
+
+                <p>
+                    Selección de asientos y cobro
+                </p>
+
+            </div>
+
+
+        </header>
+
+
+
+
+        <!-- =================================================
+             INFORMACIÓN DE LA FUNCIÓN
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Función seleccionada
+
+            </div>
+
+
+            <div class="panel function-info">
+
+
+                <!-- PELÍCULA -->
+
+                <div>
+
+                    <span>
+                        Película
+                    </span>
+
+                    <strong>
+                        {{ funcion.titulo }}
+                    </strong>
+
+                </div>
+
+
+                <!-- SALA -->
+
+                <div>
+
+                    <span>
+                        Sala
+                    </span>
+
+                    <strong>
+                        {{ funcion.nombre_sala }}
+                    </strong>
+
+                </div>
+
+
+                <!-- HORARIO -->
+
+                <div>
+
+                    <span>
+                        Horario
+                    </span>
+
+                    <strong>
+                        {{ funcion.hora_inicio.strftime('%H:%M') }}
+                    </strong>
+
+                </div>
+
+
+                <!-- PRECIO -->
+
+                <div>
+
+                    <span>
+                        Precio
+                    </span>
+
+                    <strong>
+                        ${{ "%.2f"|format(funcion.precio) }}
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             INFORMACIÓN DE LA SALA
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Tipo de sala
+
+            </div>
+
+
+            <div class="panel room-selector">
+
+
+                <div class="room active">
+
+
+                    <span>
+
+                        {{ funcion.tipo_sala }}
+
+                    </span>
+
+
+                    <small>
+
+                        {{ funcion.capacidad }}
+                        asientos
+
+                    </small>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             MAPA DE ASIENTOS
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Selección de asientos
+
+            </div>
+
+
+            <div class="panel seat-container">
+
+
+                <!-- PANTALLA -->
+
+                <div class="screen">
+
+                    PANTALLA
+
+                </div>
+
+
+
+
+                <!-- MAPA -->
+
+                <div class="seat-map">
+
+
+                    {% for asiento in asientos %}
+
+
+                        <!-- ASIENTO DISPONIBLE -->
+
+                        {% if asiento.estado == 'DISPONIBLE' %}
+
+                            <button
+                                type="button"
+                                class="seat available"
+                                data-id="{{ asiento.id_asiento }}"
+                                data-asiento="{{ asiento.fila }}{{ asiento.numero_asiento }}"
+                                data-precio="{{ funcion.precio }}"
+                            >
+
+                                {{ asiento.fila }}{{ asiento.numero_asiento }}
+
+                            </button>
+
+
+                        <!-- ASIENTO OCUPADO -->
+
+                        {% elif asiento.estado == 'OCUPADO' %}
+
+                            <button
+                                type="button"
+                                class="seat occupied"
+                                disabled
+                            >
+
+                                {{ asiento.fila }}{{ asiento.numero_asiento }}
+
+                            </button>
+
+
+                        {% endif %}
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+
+
+                <!-- LEYENDA -->
+
+                <div class="seat-info">
+
+
+                    <span>
+
+                        <i class="available-box"></i>
+
+                        Disponible
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="occupied-box"></i>
+
+                        Ocupado
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="selected-box"></i>
+
+                        Seleccionado
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             RESUMEN DE VENTA
+             ================================================= -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Resumen de venta
+
+            </div>
+
+
+            <div class="panel sale-summary">
+
+
+                <table>
+
+
+                    <tbody>
+
+
+                        <!-- ASIENTOS -->
+
+                        <tr>
+
+                            <td>
+                                Asientos seleccionados
+                            </td>
+
+                            <td id="selected-seats">
+
+                                Ninguno
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CANTIDAD -->
+
+                        <tr>
+
+                            <td>
+                                Cantidad boletos
+                            </td>
+
+                            <td id="ticket-quantity">
+
+                                0
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- PRECIO -->
+
+                        <tr>
+
+                            <td>
+                                Precio unitario
+                            </td>
+
+                            <td>
+
+                                ${{ "%.2f"|format(funcion.precio) }}
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- TOTAL -->
+
+                        <tr>
+
+                            <td>
+                                Total
+                            </td>
+
+                            <td
+                                class="green"
+                                id="sale-total"
+                            >
+
+                                $0.00
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+
+
+                <!-- =================================================
+                     MÉTODO DE PAGO
+                     ================================================= -->
+
+                <div class="payment">
+
+
+                    <button
+                        type="button"
+                        class="payment-btn"
+                        data-method="EFECTIVO"
+                    >
+
+                        Efectivo
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="payment-btn"
+                        data-method="TARJETA"
+                    >
+
+                        Tarjeta
+
+                    </button>
+
+
+                </div>
+
+
+
+
+                <!-- =================================================
+                     CONFIRMAR VENTA
+                     ================================================= -->
+
+                <form
+                    action="{{ url_for('comprobante_preview') }}"
+                    method="POST"
+                >
+
+
+                    <!-- ID DE LA FUNCIÓN -->
+
+                    <input
+                        type="hidden"
+                        name="id_funcion"
+                        value="{{ funcion.id_funcion }}"
+                    >
+
+
+                    <!-- ASIENTOS SELECCIONADOS -->
+
+                    <input
+                        type="hidden"
+                        name="asientos"
+                        id="selected-seats-input"
+                    >
+
+
+                    <!-- MÉTODO DE PAGO -->
+
+                    <input
+                        type="hidden"
+                        name="metodo_pago"
+                        id="payment-method-input"
+                    >
+
+
+                    <!-- CONFIRMAR -->
+
+                    <button
+                        type="submit"
+                        class="button confirm-sale"
+                    >
+
+                        Continuar con la venta
+
+                    </button>
+
+
+                </form>
+
+
+
+
+                <!-- CANCELAR -->
+
+                <a
+                    href="{{ url_for('pagina_principal') }}"
+                    class="button cancel-sale"
+                >
+
+                    Cancelar venta
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

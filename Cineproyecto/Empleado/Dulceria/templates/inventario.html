@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinema Pro | Inventario</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='inventario.css') }}">
+</head>
+<body>
+<aside class="sidebar">
+<div class="logo">
+<h1>CINEMA</h1>
+<p>DULCERÍA</p>
+</div>
+<nav>
+<span class="menu-title">OPERACIÓN</span>
+<a href="pagina_principal.html">Página principal</a>
+<a href="venta_productos.html">Venta de productos</a>
+<span class="menu-title">INVENTARIO</span>
+<a href="inventario.html" class="active">Inventario</a>
+<span class="menu-title">CAJA</span>
+<a href="cierre_caja.html">Cierre de caja</a>
+</nav>
+</aside>
+<main>
+<header class="header">
+<div>
+<h1>Inventario</h1>
+<p>Control rápido de productos disponibles</p>
+</div>
+</header>
+
+<!-- RESUMEN DEL INVENTARIO -->
+<section class="block">
+<div class="block-title">Estado del inventario</div>
+<div class="inventory-summary">
+<div class="summary-card">
+<span>Productos disponibles</span>
+<strong>6</strong>
+<small>En existencia</small>
+</div>
+<div class="summary-card">
+<span>Por agotarse</span>
+<strong class="yellow">2</strong>
+<small>Requieren atención</small>
+</div>
+<div class="summary-card">
+<span>Agotados</span>
+<strong class="red">0</strong>
+<small>Sin existencia</small>
+</div>
+</div>
+</section>
+
+<!-- INVENTARIO ACTUAL -->
+<section class="block">
+<div class="block-title">Inventario actual</div>
+<div class="panel">
+<table>
+<thead>
+<tr>
+<th>Producto</th>
+<th>Variante</th>
+<th>Categoría</th>
+<th>Existencia</th>
+<th>Mínimo</th>
+<th>Estado</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>Combo Clásico</td>
+<td>Grande · Mantequilla · Coca-Cola</td>
+<td>Combo</td>
+<td><strong>28</strong></td>
+<td>10</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Combo Pareja</td>
+<td>Grande · Mantequilla · Coca-Cola</td>
+<td>Combo</td>
+<td><strong class="yellow">8</strong></td>
+<td>10</td>
+<td><span class="tag tag-yellow">Reabastecer</span></td>
+<td><button type="button" class="table-button">Registrar entrada</button></td>
+</tr>
+
+<tr>
+<td>Palomitas</td>
+<td>Grande · Mantequilla</td>
+<td>Palomitas</td>
+<td><strong>45</strong></td>
+<td>15</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Palomitas</td>
+<td>Grande · Caramelo</td>
+<td>Palomitas</td>
+<td><strong>18</strong></td>
+<td>15</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Refresco</td>
+<td>Grande · Coca-Cola</td>
+<td>Bebida</td>
+<td><strong>72</strong></td>
+<td>20</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Refresco</td>
+<td>Grande · Sprite</td>
+<td>Bebida</td>
+<td><strong>31</strong></td>
+<td>15</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Nachos</td>
+<td>Grande · Queso</td>
+<td>Alimento</td>
+<td><strong class="yellow">9</strong></td>
+<td>12</td>
+<td><span class="tag tag-yellow">Reabastecer</span></td>
+<td><button type="button" class="table-button">Registrar entrada</button></td>
+</tr>
+
+<tr>
+<td>Hot Dog</td>
+<td>Individual · Clásico</td>
+<td>Alimento</td>
+<td><strong>24</strong></td>
+<td>10</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Chocolate</td>
+<td>Individual · Chocolate con leche</td>
+<td>Dulce</td>
+<td><strong>36</strong></td>
+<td>10</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+<tr>
+<td>Agua</td>
+<td>1 litro</td>
+<td>Bebida</td>
+<td><strong>40</strong></td>
+<td>15</td>
+<td><span class="tag tag-green">Disponible</span></td>
+<td><button type="button" class="table-button">Revisar</button></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ACCIONES RAPIDAS -->
+<section class="block">
+<div class="block-title">Acciones rápidas</div>
+<div class="quick-actions">
+
+<button type="button" class="action-card">
+<span class="action-symbol">+</span>
+<strong>Registrar entrada</strong>
+<small>Agregar productos al inventario</small>
+</button>
+
+<button type="button" class="action-card">
+<span class="action-symbol">−</span>
+<strong>Registrar salida</strong>
+<small>Registrar productos retirados</small>
+</button>
+
+<button type="button" class="action-card">
+<span class="action-symbol">⚠︎</span>
+<strong>Revisar faltantes</strong>
+<small>Ver productos que requieren atención</small>
+</button>
+
+</div>
+</section>
+
+<!-- MOVIMIENTOS RECIENTES -->
+<section class="block">
+<div class="block-title">Movimientos recientes</div>
+<div class="panel">
+<table>
+<thead>
+<tr>
+<th>Hora</th>
+<th>Producto</th>
+<th>Variante</th>
+<th>Movimiento</th>
+<th>Cantidad</th>
+<th>Existencia actual</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>10:15</td>
+<td>Refresco</td>
+<td>Grande · Coca-Cola</td>
+<td>Entrada</td>
+<td class="green">+24</td>
+<td>72</td>
+</tr>
+
+<tr>
+<td>11:40</td>
+<td>Combo Pareja</td>
+<td>Grande · Mantequilla · Coca-Cola</td>
+<td>Salida</td>
+<td class="red">-4</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>12:05</td>
+<td>Palomitas</td>
+<td>Grande · Mantequilla</td>
+<td>Salida</td>
+<td class="red">-6</td>
+<td>45</td>
+</tr>
+
+<tr>
+<td>12:30</td>
+<td>Nachos</td>
+<td>Grande · Queso</td>
+<td>Salida</td>
+<td class="red">-3</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>13:10</td>
+<td>Chocolate</td>
+<td>Individual · Chocolate con leche</td>
+<td>Entrada</td>
+<td class="green">+12</td>
+<td>36</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+
+</main>
+</body>
+</html>

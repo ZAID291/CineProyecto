@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- CONFIGURACIÓN DEL DOCUMENTO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cinema Pro | Taquilla
+    </title>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="pagina_principal.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGOTIPO -->
+
+        <div class="logo">
+
+            <h1>
+                CINEMA
+            </h1>
+
+            <p>
+                TAQUILLA
+            </p>
+
+        </div>
+
+
+        <!-- NAVEGACIÓN -->
+
+        <nav>
+
+
+            <!-- OPERACIÓN -->
+
+            <span class="menu-title">
+                OPERACIÓN
+            </span>
+
+
+            <a href="pagina_principal.html" class="active">
+
+                Página principal
+
+            </a>
+
+
+            <a href="venta_boletos.html">
+
+                Venta de boletos
+
+            </a>
+
+
+            <!-- CAJA -->
+
+            <span class="menu-title">
+                CAJA
+            </span>
+
+
+            <a href="cierre_caja.html">
+
+                Cierre de caja
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             ENCABEZADO
+             ================================================= -->
+
+        <header class="header">
+
+
+            <!-- INFORMACIÓN DEL MÓDULO -->
+
+            <div>
+
+                <h1>
+                    Taquilla
+                </h1>
+
+                <p>
+                    Venta de boletos | Turno actual: Caja 01
+                </p>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL EMPLEADO -->
+
+            <div>
+
+                <p>
+                    Empleado:
+                    {{ empleado.nombre }}
+                    {{ empleado.apellido }}
+                </p>
+
+            </div>
+
+
+        </header>
+
+
+
+
+        <!-- =================================================
+             PRÓXIMAS FUNCIONES
+             ================================================= -->
+
+        <section class="block">
+
+
+            <!-- TÍTULO DE LA SECCIÓN -->
+
+            <div class="block-title">
+
+                Próximas funciones
+
+            </div>
+
+
+            <!-- TARJETAS DE FUNCIONES -->
+
+            <div class="movie-grid">
+
+
+                <!-- RECORRER FUNCIONES -->
+
+                {% for funcion in proximas_funciones %}
+
+
+                    <!-- TARJETA DE FUNCIÓN -->
+
+                    <div class="function-card">
+
+
+                        <!-- HORA -->
+
+                        <div class="function-time">
+
+                            <strong>
+
+                                {{ funcion.hora_inicio.strftime('%H:%M') }}
+
+                            </strong>
+
+                            <span>
+
+                                Función
+
+                            </span>
+
+                        </div>
+
+
+
+
+                        <!-- INFORMACIÓN DE LA PELÍCULA -->
+
+                        <div class="function-info">
+
+                            <h3>
+
+                                {{ funcion.titulo }}
+
+                            </h3>
+
+                            <p>
+
+                                {{ funcion.nombre_sala }}
+
+                            </p>
+
+                        </div>
+
+
+
+
+                        <!-- DATOS DE LA FUNCIÓN -->
+
+                        <div class="function-data">
+
+
+                            <!-- PRECIO -->
+
+                            <div>
+
+                                <span>
+
+                                    Precio
+
+                                </span>
+
+                                <strong>
+
+                                    ${{ "%.2f"|format(funcion.precio) }}
+
+                                </strong>
+
+                            </div>
+
+
+                            <!-- ASIENTOS DISPONIBLES -->
+
+                            <div>
+
+                                <span>
+
+                                    Disponibles
+
+                                </span>
+
+
+                                {% if funcion.asientos_disponibles > 20 %}
+
+                                    <strong class="green">
+
+                                        {{ funcion.asientos_disponibles }}
+                                        asientos
+
+                                    </strong>
+
+
+                                {% elif funcion.asientos_disponibles > 0 %}
+
+                                    <strong class="yellow">
+
+                                        {{ funcion.asientos_disponibles }}
+                                        asientos
+
+                                    </strong>
+
+
+                                {% else %}
+
+                                    <strong class="red">
+
+                                        Agotado
+
+                                    </strong>
+
+                                {% endif %}
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- BOTÓN DE VENTA -->
+
+                        {% if funcion.asientos_disponibles > 0 %}
+
+                            <a
+                                href="{{ url_for('venta_boletos', id_funcion=funcion.id_funcion) }}"
+                                class="button"
+                            >
+
+                                Iniciar venta
+
+                            </a>
+
+                        {% else %}
+
+                            <span class="button disabled-button">
+
+                                Agotado
+
+                            </span>
+
+                        {% endif %}
+
+
+                    </div>
+
+
+                {% else %}
+
+
+                    <!-- SIN FUNCIONES -->
+
+                    <p>
+
+                        No hay funciones próximas disponibles.
+
+                    </p>
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             FUNCIONES DEL DÍA
+             ================================================= -->
+
+        <section class="block">
+
+
+            <!-- TÍTULO -->
+
+            <div class="block-title">
+
+                Funciones del día
+
+            </div>
+
+
+            <!-- PANEL -->
+
+            <div class="panel">
+
+
+                <!-- TABLA -->
+
+                <table>
+
+
+                    <!-- ENCABEZADOS -->
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Hora
+                            </th>
+
+                            <th>
+                                Película
+                            </th>
+
+                            <th>
+                                Sala
+                            </th>
+
+                            <th>
+                                Precio
+                            </th>
+
+                            <th>
+                                Asientos disponibles
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+
+                    <!-- CONTENIDO -->
+
+                    <tbody>
+
+
+                        {% for funcion in funciones_dia %}
+
+
+                            <tr>
+
+
+                                <!-- HORA -->
+
+                                <td>
+
+                                    {{ funcion.hora_inicio.strftime('%H:%M') }}
+
+                                </td>
+
+
+                                <!-- PELÍCULA -->
+
+                                <td>
+
+                                    {{ funcion.titulo }}
+
+                                </td>
+
+
+                                <!-- SALA -->
+
+                                <td>
+
+                                    {{ funcion.nombre_sala }}
+
+                                </td>
+
+
+                                <!-- PRECIO -->
+
+                                <td>
+
+                                    ${{ "%.2f"|format(funcion.precio) }}
+
+                                </td>
+
+
+                                <!-- ASIENTOS -->
+
+                                <td>
+
+
+                                    {% if funcion.asientos_disponibles > 20 %}
+
+                                        <span class="green">
+
+                                            {{ funcion.asientos_disponibles }}
+                                            asientos
+
+                                        </span>
+
+
+                                    {% elif funcion.asientos_disponibles > 0 %}
+
+                                        <span class="yellow">
+
+                                            {{ funcion.asientos_disponibles }}
+                                            asientos
+
+                                        </span>
+
+
+                                    {% else %}
+
+                                        <span class="red">
+
+                                            Agotado
+
+                                        </span>
+
+                                    {% endif %}
+
+
+                                </td>
+
+
+                                <!-- ACCIÓN -->
+
+                                <td>
+
+
+                                    {% if funcion.asientos_disponibles > 0 %}
+
+                                        <a
+                                            href="{{ url_for('venta_boletos', id_funcion=funcion.id_funcion) }}"
+                                            class="button small-button"
+                                        >
+
+                                            Iniciar venta
+
+                                        </a>
+
+
+                                    {% else %}
+
+                                        <span class="button small-button disabled-button">
+
+                                            Agotado
+
+                                        </span>
+
+                                    {% endif %}
+
+
+                                </td>
+
+
+                            </tr>
+
+
+                        {% else %}
+
+
+                            <!-- SIN FUNCIONES -->
+
+                            <tr>
+
+                                <td colspan="6">
+
+                                    No hay funciones programadas para el día.
+
+                                </td>
+
+                            </tr>
+
+
+                        {% endfor %}
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

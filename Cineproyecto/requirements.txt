@@ -1,0 +1,5 @@
+Flask
+Flask-WTF
+psycopg[binary]
+python-dotenv
+gunicorn

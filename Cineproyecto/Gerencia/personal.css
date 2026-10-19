@@ -1,0 +1,1186 @@
+/* =========================================================
+   CINEMA PRO | GERENCIA | PERSONAL
+========================================================= */
+
+:root {
+    --background: #0f1118;
+    --panel: rgba(29, 33, 45, .85);
+    --panel-hover: rgba(37, 42, 56, .95);
+
+    --primary: #e50914;
+    --secondary: #ffc857;
+
+    --text: #ffffff;
+    --text-soft: #98a2b3;
+
+    --border: rgba(255, 255, 255, .05);
+
+    --success: #35d07f;
+    --warning: #ffc857;
+    --danger: #ff5c5c;
+
+    --shadow: 0 25px 60px rgba(0, 0, 0, .45);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(229, 9, 20, .08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(255, 200, 87, .04),
+            transparent 25%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 30px 18px;
+
+    background: rgba(15, 17, 24, .96);
+
+    border-right: 1px solid var(--border);
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    padding: 8px 14px 30px;
+}
+
+.logo h1 {
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.logo p {
+    margin-top: 3px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.nav-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.nav-title {
+    margin: 0 12px 8px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.nav a {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 42px;
+
+    padding: 0 13px;
+
+    color: var(--text-soft);
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.nav a:hover {
+    background: var(--panel-hover);
+
+    color: var(--text);
+
+    transform: translateX(2px);
+}
+
+.nav a.active {
+    background: rgba(229, 9, 20, .12);
+
+    color: var(--text);
+
+    border-left: 3px solid var(--primary);
+
+    padding-left: 10px;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.main {
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 35px 40px 60px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.header h2 {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -.5px;
+}
+
+.header p {
+    max-width: 720px;
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTROLES DEL HEADER
+========================================================= */
+
+.header-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.period-control {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 10px 14px;
+
+    background: rgba(255, 255, 255, .03);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+.period-control span {
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .8px;
+}
+
+.period-control strong {
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.header-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 14px;
+
+    color: var(--text-soft);
+
+    background: rgba(255, 255, 255, .03);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--success);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px rgba(53, 208, 127, .5);
+}
+
+
+/* =========================================================
+   BLOQUES
+========================================================= */
+
+.block {
+    margin-bottom: 32px;
+}
+
+.block-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 16px;
+}
+
+.block-title h3 {
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.block-title p {
+    margin-top: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MÉTRICAS
+========================================================= */
+
+.metric-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 14px;
+}
+
+.metric-card {
+    min-height: 125px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+
+    background: var(--panel-hover);
+}
+
+.metric-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.metric-card strong {
+    display: block;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+.metric-card small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+.metric-card.success {
+    border-top: 2px solid var(--success);
+}
+
+.metric-card.warning {
+    border-top: 2px solid var(--warning);
+}
+
+.metric-card.danger {
+    border-top: 2px solid var(--danger);
+}
+
+
+/* =========================================================
+   DEPARTAMENTOS
+========================================================= */
+
+.department-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.department-card {
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-2px);
+
+    background: var(--panel-hover);
+}
+
+.department-card.warning-card {
+    border-color: rgba(255, 200, 87, .3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 200, 87, .05),
+            var(--panel)
+        );
+}
+
+
+/* =========================================================
+   ENCABEZADO DE DEPARTAMENTO
+========================================================= */
+
+.department-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.department-type {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.department-header h4 {
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESULTADO DEPARTAMENTO
+========================================================= */
+
+.department-result {
+    padding: 18px 0;
+}
+
+.department-result span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.department-result strong {
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DATOS DEPARTAMENTO
+========================================================= */
+
+.department-data {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.department-data div {
+    padding: 10px;
+
+    background: rgba(255, 255, 255, .025);
+
+    border-radius: 8px;
+}
+
+.department-data span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+}
+
+.department-data strong {
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.panel {
+    padding: 24px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.table-panel {
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+}
+
+thead {
+    background: rgba(255, 255, 255, .025);
+}
+
+th {
+    padding: 15px 16px;
+
+    color: var(--text-soft);
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+tbody tr {
+    transition: background .2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, .025);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td strong {
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PORCENTAJES
+========================================================= */
+
+.percentage {
+    font-weight: 700;
+}
+
+.success-text {
+    color: var(--success);
+}
+
+.warning-text {
+    color: var(--warning);
+}
+
+.danger-text {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.status-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.status-tag.success {
+    color: var(--success);
+
+    background: rgba(53, 208, 127, .10);
+}
+
+.status-tag.warning {
+    color: var(--warning);
+
+    background: rgba(255, 200, 87, .10);
+}
+
+.status-tag.danger {
+    color: var(--danger);
+
+    background: rgba(255, 92, 92, .10);
+}
+
+
+/* =========================================================
+   EVOLUCIÓN
+========================================================= */
+
+.evolution-panel {
+    padding: 25px;
+}
+
+.evolution-summary {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.evolution-summary div {
+    padding: 16px;
+
+    background: rgba(255, 255, 255, .025);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+.evolution-summary span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.evolution-summary strong {
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BARRAS DE EVOLUCIÓN
+========================================================= */
+
+.evolution-bars {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.evolution-row {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.evolution-label {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+}
+
+.evolution-label span {
+    color: var(--text-soft);
+}
+
+.evolution-label strong {
+    font-size: 11px;
+}
+
+.bar {
+    width: 100%;
+
+    height: 8px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .06);
+
+    border-radius: 20px;
+}
+
+.bar-fill {
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 10px rgba(229, 9, 20, .25);
+}
+
+
+/* =========================================================
+   SEGUIMIENTO
+========================================================= */
+
+.followup-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.followup-card {
+    padding: 21px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.followup-card:hover {
+    transform: translateY(-2px);
+
+    background: var(--panel-hover);
+}
+
+.followup-card.warning {
+    border-top: 2px solid var(--warning);
+}
+
+.followup-card.success {
+    border-top: 2px solid var(--success);
+}
+
+.followup-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.followup-card h4 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.followup-card p {
+    min-height: 42px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.followup-card a {
+    display: inline-block;
+
+    margin-top: 14px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.followup-card a:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.action-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.action-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    color: var(--text);
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+
+    background: var(--panel-hover);
+
+    border-color: rgba(229, 9, 20, .25);
+}
+
+.action-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 35px;
+
+    height: 35px;
+
+    color: var(--primary);
+
+    background: rgba(229, 9, 20, .08);
+
+    border-radius: 8px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.action-card h4 {
+    margin-bottom: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.action-card p {
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .08);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE | 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .main {
+        padding: 30px;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .department-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE | 950px
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main {
+        margin-left: 220px;
+
+        padding: 25px;
+    }
+
+    .header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .header-controls {
+        width: 100%;
+    }
+
+    .period-control {
+        flex: 1;
+    }
+
+    .followup-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE | 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 20px;
+    }
+
+    .logo {
+        padding-bottom: 20px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .main {
+        margin-left: 0;
+
+        padding: 22px 18px 40px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .header-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .metric-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evolution-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE | 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .evolution-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .department-data {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .followup-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

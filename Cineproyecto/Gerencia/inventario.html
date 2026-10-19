@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Pro | Inventario</title>
+
+    <link rel="stylesheet" href="inventario.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>CINEMA</h1>
+            <p>GERENCIA</p>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <!-- OPERACIÓN -->
+
+            <div class="nav-section">
+
+                <span class="nav-title">OPERACIÓN</span>
+
+                <a href="pagina_principal.html" class="nav-item">
+                    <span>▦</span>
+                    <span>Centro de gestión</span>
+                </a>
+
+                <a href="operacion.html" class="nav-item">
+                    <span>◈</span>
+                    <span>Operación</span>
+                </a>
+
+                <a href="taquilla.html" class="nav-item">
+                    <span>▣</span>
+                    <span>Taquilla</span>
+                </a>
+
+                <a href="dulceria.html" class="nav-item">
+                    <span>◆</span>
+                    <span>Dulcería</span>
+                </a>
+
+                <a href="salas.html" class="nav-item">
+                    <span>▤</span>
+                    <span>Salas</span>
+                </a>
+
+            </div>
+
+
+            <!-- RECURSOS -->
+
+            <div class="nav-section">
+
+                <span class="nav-title">RECURSOS</span>
+
+                <a href="personal.html" class="nav-item">
+                    <span>♙</span>
+                    <span>Personal</span>
+                </a>
+
+                <a href="inventario.html" class="nav-item active">
+                    <span>▧</span>
+                    <span>Inventario</span>
+                </a>
+
+            </div>
+
+
+            <!-- CONTROL -->
+
+            <div class="nav-section">
+
+                <span class="nav-title">CONTROL</span>
+
+                <a href="caja.html" class="nav-item">
+                    <span>▤</span>
+                    <span>Caja</span>
+                </a>
+
+                <a href="incidencias.html" class="nav-item">
+                    <span>!</span>
+                    <span>Incidencias</span>
+                </a>
+
+                <a href="reportes.html" class="nav-item">
+                    <span>▥</span>
+                    <span>Reportes</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================================================
+         CONTENIDO PRINCIPAL
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- =====================================================
+             ENCABEZADO
+        ====================================================== -->
+
+        <header class="page-header">
+
+            <div class="header-info">
+
+                <span class="eyebrow">RECURSOS</span>
+
+                <h1>Inventario</h1>
+
+                <p>
+                    Supervisión de existencias, rotación, reposición
+                    y recursos necesarios para mantener la operación.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <div class="period-control">
+                    <span class="control-label">Período</span>
+                    <strong>01 - 31 Agosto 2026</strong>
+                </div>
+
+                <a href="reportes.html" class="btn btn-primary">
+                    Generar reporte
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             INDICADORES GENERALES
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">VISIÓN GENERAL</span>
+                    <h2>Estado del inventario</h2>
+                </div>
+
+                <span class="status-badge status-warning">
+                    Atención requerida
+                </span>
+
+            </div>
+
+
+            <div class="metric-grid">
+
+                <article class="metric-card">
+
+                    <span class="metric-label">
+                        Productos registrados
+                    </span>
+
+                    <strong class="metric-value">
+                        48
+                    </strong>
+
+                    <span class="metric-description">
+                        Dulcería y operación
+                    </span>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <span class="metric-label">
+                        Stock disponible
+                    </span>
+
+                    <strong class="metric-value">
+                        86%
+                    </strong>
+
+                    <span class="metric-description positive">
+                        Nivel general
+                    </span>
+
+                </article>
+
+
+                <article class="metric-card warning">
+
+                    <span class="metric-label">
+                        Stock bajo
+                    </span>
+
+                    <strong class="metric-value">
+                        6
+                    </strong>
+
+                    <span class="metric-description warning-text">
+                        Requieren seguimiento
+                    </span>
+
+                </article>
+
+
+                <article class="metric-card danger">
+
+                    <span class="metric-label">
+                        Stock crítico
+                    </span>
+
+                    <strong class="metric-value">
+                        3
+                    </strong>
+
+                    <span class="metric-description danger-text">
+                        Riesgo operativo
+                    </span>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <span class="metric-label">
+                        Movimientos
+                    </span>
+
+                    <strong class="metric-value">
+                        47
+                    </strong>
+
+                    <span class="metric-description">
+                        Durante el período
+                    </span>
+
+                </article>
+
+
+                <article class="metric-card">
+
+                    <span class="metric-label">
+                        Valor estimado
+                    </span>
+
+                    <strong class="metric-value">
+                        $38,420
+                    </strong>
+
+                    <span class="metric-description">
+                        Existencias actuales
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ALERTAS PRIORITARIAS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">PRIORIDADES</span>
+                    <h2>Alertas de inventario</h2>
+                </div>
+
+                <span class="section-description">
+                    Elementos que requieren intervención
+                </span>
+
+            </div>
+
+
+            <div class="alert-grid">
+
+
+                <!-- ALERTA 1 -->
+
+                <article class="alert-card danger">
+
+                    <div class="alert-icon">
+                        !
+                    </div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-top">
+
+                            <span class="alert-area">
+                                DULCERÍA
+                            </span>
+
+                            <span class="status-badge status-danger">
+                                Crítico
+                            </span>
+
+                        </div>
+
+                        <h3>Palomitas grandes</h3>
+
+                        <p>
+                            Existencia actual de 8 unidades frente a
+                            un mínimo operativo de 20.
+                        </p>
+
+                        <div class="alert-data">
+
+                            <div>
+                                <span>Existencia</span>
+                                <strong>8</strong>
+                            </div>
+
+                            <div>
+                                <span>Mínimo</span>
+                                <strong>20</strong>
+                            </div>
+
+                            <div>
+                                <span>Estado</span>
+                                <strong>Reponer</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTA 2 -->
+
+                <article class="alert-card warning">
+
+                    <div class="alert-icon">
+                        !
+                    </div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-top">
+
+                            <span class="alert-area">
+                                OPERACIÓN
+                            </span>
+
+                            <span class="status-badge status-warning">
+                                Bajo
+                            </span>
+
+                        </div>
+
+                        <h3>Papel sanitario</h3>
+
+                        <p>
+                            La existencia actual está por debajo
+                            del nivel preventivo definido.
+                        </p>
+
+                        <div class="alert-data">
+
+                            <div>
+                                <span>Existencia</span>
+                                <strong>6</strong>
+                            </div>
+
+                            <div>
+                                <span>Mínimo</span>
+                                <strong>15</strong>
+                            </div>
+
+                            <div>
+                                <span>Estado</span>
+                                <strong>Comprar</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTA 3 -->
+
+                <article class="alert-card danger">
+
+                    <div class="alert-icon">
+                        !
+                    </div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-top">
+
+                            <span class="alert-area">
+                                PROYECCIÓN
+                            </span>
+
+                            <span class="status-badge status-danger">
+                                Crítico
+                            </span>
+
+                        </div>
+
+                        <h3>Lámpara de proyector</h3>
+
+                        <p>
+                            Solo existe una reserva disponible y
+                            actualmente se encuentra en nivel mínimo.
+                        </p>
+
+                        <div class="alert-data">
+
+                            <div>
+                                <span>Existencia</span>
+                                <strong>2</strong>
+                            </div>
+
+                            <div>
+                                <span>Mínimo</span>
+                                <strong>2</strong>
+                            </div>
+
+                            <div>
+                                <span>Estado</span>
+                                <strong>Prevenir</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INVENTARIO POR ÁREA
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">DISTRIBUCIÓN</span>
+                    <h2>Inventario por área</h2>
+                </div>
+
+                <span class="section-description">
+                    Separación entre recursos comerciales y operativos
+                </span>
+
+            </div>
+
+
+            <div class="inventory-area-grid">
+
+
+                <!-- DULCERÍA -->
+
+                <article class="area-card">
+
+                    <div class="area-header">
+
+                        <div>
+
+                            <span class="area-label">
+                                ÁREA COMERCIAL
+                            </span>
+
+                            <h3>Dulcería</h3>
+
+                        </div>
+
+                        <span class="area-status normal">
+                            Operando
+                        </span>
+
+                    </div>
+
+
+                    <div class="area-metrics">
+
+                        <div>
+                            <span>Productos</span>
+                            <strong>26</strong>
+                        </div>
+
+                        <div>
+                            <span>Stock normal</span>
+                            <strong>21</strong>
+                        </div>
+
+                        <div>
+                            <span>Stock bajo</span>
+                            <strong>4</strong>
+                        </div>
+
+                        <div>
+                            <span>Críticos</span>
+                            <strong>1</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-section">
+
+                        <div class="progress-header">
+
+                            <span>Nivel de inventario</span>
+
+                            <strong>89%</strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style="width: 89%;">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="area-footer">
+
+                        <span>
+                            Mayor movimiento:
+                            <strong>Palomitas grandes</strong>
+                        </span>
+
+                        <a href="dulceria.html">
+                            Ver área
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- OPERACIÓN -->
+
+                <article class="area-card">
+
+                    <div class="area-header">
+
+                        <div>
+
+                            <span class="area-label">
+                                ÁREA OPERATIVA
+                            </span>
+
+                            <h3>Operación</h3>
+
+                        </div>
+
+                        <span class="area-status warning">
+                            Atención
+                        </span>
+
+                    </div>
+
+
+                    <div class="area-metrics">
+
+                        <div>
+                            <span>Productos</span>
+                            <strong>22</strong>
+                        </div>
+
+                        <div>
+                            <span>Stock normal</span>
+                            <strong>15</strong>
+                        </div>
+
+                        <div>
+                            <span>Stock bajo</span>
+                            <strong>4</strong>
+                        </div>
+
+                        <div>
+                            <span>Críticos</span>
+                            <strong>2</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-section">
+
+                        <div class="progress-header">
+
+                            <span>Nivel de inventario</span>
+
+                            <strong>82%</strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill warning-fill"
+                                style="width: 82%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="area-footer">
+
+                        <span>
+                            Mayor atención:
+                            <strong>Proyección</strong>
+                        </span>
+
+                        <a href="operacion.html">
+                            Ver área
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRODUCTOS CRÍTICOS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">CONTROL DE EXISTENCIAS</span>
+                    <h2>Productos que requieren seguimiento</h2>
+                </div>
+
+                <span class="section-description">
+                    Ordenados por nivel de atención
+                </span>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Producto</th>
+                                <th>Área</th>
+                                <th>Categoría</th>
+                                <th>Existencia</th>
+                                <th>Mínimo</th>
+                                <th>Consumo</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Palomitas grandes</strong>
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Alimentos
+                                </td>
+
+                                <td>
+                                    8
+                                </td>
+
+                                <td>
+                                    20
+                                </td>
+
+                                <td>
+                                    Alto
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-danger">
+                                        Crítico
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Reponer
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Vasos grandes</strong>
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Empaque
+                                </td>
+
+                                <td>
+                                    9
+                                </td>
+
+                                <td>
+                                    25
+                                </td>
+
+                                <td>
+                                    Alto
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-danger">
+                                        Crítico
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Reponer
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Papel sanitario</strong>
+                                </td>
+
+                                <td>
+                                    Operación
+                                </td>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td>
+                                    6
+                                </td>
+
+                                <td>
+                                    15
+                                </td>
+
+                                <td>
+                                    Medio
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-warning">
+                                        Bajo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Comprar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Salsa para nachos</strong>
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Alimentos
+                                </td>
+
+                                <td>
+                                    16
+                                </td>
+
+                                <td>
+                                    20
+                                </td>
+
+                                <td>
+                                    Medio
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-warning">
+                                        Bajo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Revisar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Lámpara de proyector</strong>
+                                </td>
+
+                                <td>
+                                    Operación
+                                </td>
+
+                                <td>
+                                    Proyección
+                                </td>
+
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Bajo
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-danger">
+                                        Crítico
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Prevenir
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Productos de limpieza</strong>
+                                </td>
+
+                                <td>
+                                    Operación
+                                </td>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td>
+                                    18
+                                </td>
+
+                                <td>
+                                    25
+                                </td>
+
+                                <td>
+                                    Medio
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-warning">
+                                        Bajo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Revisar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ROTACIÓN DEL INVENTARIO
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">MOVIMIENTO</span>
+                    <h2>Rotación y consumo</h2>
+                </div>
+
+                <span class="section-description">
+                    Productos con mayor movimiento durante el período
+                </span>
+
+            </div>
+
+
+            <div class="rotation-grid">
+
+
+                <!-- PRODUCTO 1 -->
+
+                <article class="rotation-card">
+
+                    <div class="rotation-header">
+
+                        <div>
+
+                            <span class="rotation-category">
+                                DULCERÍA
+                            </span>
+
+                            <h3>Palomitas grandes</h3>
+
+                        </div>
+
+                        <strong class="rotation-value">
+                            Alta
+                        </strong>
+
+                    </div>
+
+                    <div class="rotation-bar">
+
+                        <div
+                            class="rotation-fill high"
+                            style="width: 92%;">
+                        </div>
+
+                    </div>
+
+                    <div class="rotation-footer">
+
+                        <span>
+                            Movimiento
+                        </span>
+
+                        <strong>
+                            92%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 2 -->
+
+                <article class="rotation-card">
+
+                    <div class="rotation-header">
+
+                        <div>
+
+                            <span class="rotation-category">
+                                DULCERÍA
+                            </span>
+
+                            <h3>Refresco grande</h3>
+
+                        </div>
+
+                        <strong class="rotation-value">
+                            Alta
+                        </strong>
+
+                    </div>
+
+                    <div class="rotation-bar">
+
+                        <div
+                            class="rotation-fill high"
+                            style="width: 84%;">
+                        </div>
+
+                    </div>
+
+                    <div class="rotation-footer">
+
+                        <span>
+                            Movimiento
+                        </span>
+
+                        <strong>
+                            84%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 3 -->
+
+                <article class="rotation-card">
+
+                    <div class="rotation-header">
+
+                        <div>
+
+                            <span class="rotation-category">
+                                DULCERÍA
+                            </span>
+
+                            <h3>Nachos</h3>
+
+                        </div>
+
+                        <strong class="rotation-value">
+                            Media
+                        </strong>
+
+                    </div>
+
+                    <div class="rotation-bar">
+
+                        <div
+                            class="rotation-fill medium"
+                            style="width: 61%;">
+                        </div>
+
+                    </div>
+
+                    <div class="rotation-footer">
+
+                        <span>
+                            Movimiento
+                        </span>
+
+                        <strong>
+                            61%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 4 -->
+
+                <article class="rotation-card">
+
+                    <div class="rotation-header">
+
+                        <div>
+
+                            <span class="rotation-category">
+                                OPERACIÓN
+                            </span>
+
+                            <h3>Material de limpieza</h3>
+
+                        </div>
+
+                        <strong class="rotation-value">
+                            Media
+                        </strong>
+
+                    </div>
+
+                    <div class="rotation-bar">
+
+                        <div
+                            class="rotation-fill medium"
+                            style="width: 54%;">
+                        </div>
+
+                    </div>
+
+                    <div class="rotation-footer">
+
+                        <span>
+                            Movimiento
+                        </span>
+
+                        <strong>
+                            54%
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROYECCIÓN DE REPOSICIÓN
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">REABASTECIMIENTO</span>
+                    <h2>Próximas reposiciones</h2>
+                </div>
+
+                <span class="section-description">
+                    Basado en existencia y consumo observado
+                </span>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Producto</th>
+                                <th>Existencia</th>
+                                <th>Consumo estimado</th>
+                                <th>Tiempo estimado</th>
+                                <th>Prioridad</th>
+                                <th>Acción</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Palomitas grandes</strong>
+                                </td>
+
+                                <td>
+                                    8 unidades
+                                </td>
+
+                                <td>
+                                    6 / día
+                                </td>
+
+                                <td>
+                                    Menos de 2 días
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-danger">
+                                        Alta
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Reponer
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Vasos grandes</strong>
+                                </td>
+
+                                <td>
+                                    9 unidades
+                                </td>
+
+                                <td>
+                                    5 / día
+                                </td>
+
+                                <td>
+                                    Menos de 2 días
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-danger">
+                                        Alta
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Reponer
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Papel sanitario</strong>
+                                </td>
+
+                                <td>
+                                    6 unidades
+                                </td>
+
+                                <td>
+                                    2 / día
+                                </td>
+
+                                <td>
+                                    3 días
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-warning">
+                                        Media
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Comprar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>Salsa para nachos</strong>
+                                </td>
+
+                                <td>
+                                    16 unidades
+                                </td>
+
+                                <td>
+                                    3 / día
+                                </td>
+
+                                <td>
+                                    5 días
+                                </td>
+
+                                <td>
+                                    <span class="status-badge status-warning">
+                                        Media
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="table-action">
+                                        Programar
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MOVIMIENTOS RECIENTES
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">CONTROL</span>
+                    <h2>Movimientos recientes</h2>
+                </div>
+
+                <span class="section-description">
+                    Últimos movimientos registrados
+                </span>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Producto</th>
+                                <th>Área</th>
+                                <th>Movimiento</th>
+                                <th>Cantidad</th>
+                                <th>Responsable</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    31 Ago. 2026
+                                </td>
+
+                                <td>
+                                    Palomitas grandes
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Salida por venta
+                                </td>
+
+                                <td class="negative">
+                                    -12
+                                </td>
+
+                                <td>
+                                    Diego Hernández
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    31 Ago. 2026
+                                </td>
+
+                                <td>
+                                    Refresco grande
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Salida por venta
+                                </td>
+
+                                <td class="negative">
+                                    -18
+                                </td>
+
+                                <td>
+                                    Laura Martínez
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    30 Ago. 2026
+                                </td>
+
+                                <td>
+                                    Productos de limpieza
+                                </td>
+
+                                <td>
+                                    Operación
+                                </td>
+
+                                <td>
+                                    Consumo operativo
+                                </td>
+
+                                <td class="negative">
+                                    -4
+                                </td>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    30 Ago. 2026
+                                </td>
+
+                                <td>
+                                    Vasos grandes
+                                </td>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Entrada de proveedor
+                                </td>
+
+                                <td class="positive">
+                                    +50
+                                </td>
+
+                                <td>
+                                    Gerencia
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    29 Ago. 2026
+                                </td>
+
+                                <td>
+                                    Papel sanitario
+                                </td>
+
+                                <td>
+                                    Operación
+                                </td>
+
+                                <td>
+                                    Consumo operativo
+                                </td>
+
+                                <td class="negative">
+                                    -3
+                                </td>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEGUIMIENTO GERENCIAL
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">SUPERVISIÓN</span>
+                    <h2>Seguimiento recomendado</h2>
+                </div>
+
+            </div>
+
+
+            <div class="recommendation-grid">
+
+
+                <article class="recommendation-card danger">
+
+                    <span class="recommendation-label">
+                        ACCIÓN INMEDIATA
+                    </span>
+
+                    <h3>Reponer productos de alta rotación</h3>
+
+                    <p>
+                        Palomitas grandes y vasos grandes presentan
+                        existencias inferiores al nivel requerido
+                        para mantener la operación de dulcería.
+                    </p>
+
+                    <a href="dulceria.html" class="recommendation-link">
+                        Revisar dulcería →
+                    </a>
+
+                </article>
+
+
+                <article class="recommendation-card warning">
+
+                    <span class="recommendation-label">
+                        PREVENCIÓN
+                    </span>
+
+                    <h3>Revisar inventario operativo</h3>
+
+                    <p>
+                        Papel sanitario y productos de limpieza
+                        requieren reposición para evitar afectar
+                        la operación de las salas.
+                    </p>
+
+                    <a href="operacion.html" class="recommendation-link">
+                        Revisar operación →
+                    </a>
+
+                </article>
+
+
+                <article class="recommendation-card">
+
+                    <span class="recommendation-label">
+                        CONTROL
+                    </span>
+
+                    <h3>Supervisar consumos</h3>
+
+                    <p>
+                        Comparar las salidas de inventario con las
+                        ventas y el consumo operativo permite
+                        detectar diferencias y desperdicios.
+                    </p>
+
+                    <a href="reportes.html" class="recommendation-link">
+                        Ver reportes →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ACCIONES
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-kicker">ACCIONES</span>
+                    <h2>Gestión de inventario</h2>
+                </div>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <a href="#" class="action-card">
+
+                    <span class="action-icon">
+                        +
+                    </span>
+
+                    <div>
+                        <strong>Registrar entrada</strong>
+
+                        <p>
+                            Registrar mercancía recibida
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="action-card">
+
+                    <span class="action-icon">
+                        −
+                    </span>
+
+                    <div>
+                        <strong>Registrar salida</strong>
+
+                        <p>
+                            Registrar consumo operativo
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="#" class="action-card">
+
+                    <span class="action-icon">
+                        ↻
+                    </span>
+
+                    <div>
+                        <strong>Realizar inventario</strong>
+
+                        <p>
+                            Comparar existencia física
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <a href="reportes.html" class="action-card">
+
+                    <span class="action-icon">
+                        ▥
+                    </span>
+
+                    <div>
+                        <strong>Generar reporte</strong>
+
+                        <p>
+                            Consultar historial y movimientos
+                        </p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

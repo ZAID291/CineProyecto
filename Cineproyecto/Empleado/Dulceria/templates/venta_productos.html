@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Pro | Venta de productos</title>
+
+<!-- Hoja de estilos exclusiva de esta página -->
+<link rel="stylesheet" href="{{ url_for('static', filename='venta_productos.css') }}">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     BARRA LATERAL
+     ========================================================== -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>CINEMA</h1>
+        <p>DULCERÍA</p>
+    </div>
+
+    <nav>
+
+        <span class="menu-title">
+            OPERACIÓN
+        </span>
+
+        <a href="{{ url_for('pagina_principal') }}">
+            Página principal
+        </a>
+
+        <a href="{{ url_for('venta_productos') }}" class="active">
+            Venta de productos
+        </a>
+
+        <span class="menu-title">
+            INVENTARIO
+        </span>
+
+        <a href="{{ url_for('inventario') }}">
+            Inventario
+        </a>
+
+        <span class="menu-title">
+            CAJA
+        </span>
+
+        <a href="{{ url_for('cierre_caja') }}">
+            Cierre de caja
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<!-- ==========================================================
+     CONTENIDO PRINCIPAL
+     ========================================================== -->
+<main>
+
+    <!-- ======================================================
+         ENCABEZADO
+         ====================================================== -->
+    <header class="header">
+
+        <div>
+
+            <h1>
+                Venta de productos
+            </h1>
+
+            <p>
+                Selecciona las variantes y cantidades que deseas vender
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================================
+         MENSAJES DE FLASK
+         ====================================================== -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            <section class="block">
+
+                {% for categoria, mensaje in messages %}
+
+                    <div class="alert {{ categoria }}">
+                        {{ mensaje }}
+                    </div>
+
+                {% endfor %}
+
+            </section>
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <!-- ======================================================
+         FORMULARIO DE VENTA
+
+         Este formulario NO registra todavía la venta.
+
+         Primero manda los productos seleccionados a:
+
+             /comprobante/preview
+
+         Allí Flask consulta nuevamente MySQL y genera
+         el comprobante antes de registrar definitivamente
+         la venta.
+         ====================================================== -->
+    <form
+        action="{{ url_for('comprobante_preview') }}"
+        method="POST"
+    >
+
+
+        <!-- ==================================================
+             PRODUCTOS DISPONIBLES
+             ================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+                Productos disponibles
+            </div>
+
+
+            <div class="product-grid">
+
+                {% if productos %}
+
+                    {% for producto in productos %}
+
+                        <!-- ==================================
+                             TARJETA DE PRODUCTO
+                             ================================== -->
+                        <div class="product-card">
+
+
+                            <!-- ==============================
+                                 ID REAL DE LA VARIANTE
+
+                                 Este dato viene directamente
+                                 desde MySQL.
+
+                                 Flask lo recibe mediante:
+
+                                 request.form.getlist(
+                                     "id_variante"
+                                 )
+                                 ============================== -->
+                            <input
+                                type="hidden"
+                                name="id_variante"
+                                value="{{ producto.id_variante }}"
+                            >
+
+
+                            <!-- ==============================
+                                 INFORMACIÓN DEL PRODUCTO
+                                 ============================== -->
+                            <div class="product-info">
+
+                                <span>
+                                    {{ producto.categoria }}
+                                </span>
+
+                                <h3>
+                                    {{ producto.producto }}
+                                </h3>
+
+                                <p>
+                                    {{ producto.descripcion }}
+                                </p>
+
+                            </div>
+
+
+                            <!-- ==============================
+                                 INFORMACIÓN DE LA VARIANTE
+                                 ============================== -->
+                            <div class="variant-info">
+
+                                <div>
+
+                                    <span>
+                                        Variante
+                                    </span>
+
+                                    <strong>
+                                        {{ producto.variante }}
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Tamaño
+                                    </span>
+
+                                    <strong>
+                                        {{ producto.tamano or '-' }}
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Sabor
+                                    </span>
+
+                                    <strong>
+                                        {{ producto.sabor or '-' }}
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Presentación
+                                    </span>
+
+                                    <strong>
+                                        {{ producto.presentacion or '-' }}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ==============================
+                                 PRECIO, INVENTARIO Y CANTIDAD
+                                 ============================== -->
+                            <div class="product-bottom">
+
+
+                                <!-- ==========================
+                                     PRECIO
+
+                                     El precio solamente se
+                                     muestra.
+
+                                     NO se envía al servidor
+                                     desde el formulario.
+
+                                     Flask lo consulta
+                                     directamente desde MySQL.
+                                     ========================== -->
+                                <div class="product-price">
+
+                                    <span>
+                                        Precio
+                                    </span>
+
+                                    <strong>
+                                        ${{ "%.2f"|format(producto.precio|float) }}
+                                    </strong>
+
+                                </div>
+
+
+                                <!-- ==========================
+                                     EXISTENCIA
+
+                                     La existencia viene de:
+
+                                         inventario.existencia
+
+                                     Se utiliza también como
+                                     límite máximo de venta.
+                                     ========================== -->
+                                <div class="product-stock">
+
+                                    <span>
+                                        Disponibles
+                                    </span>
+
+                                    {% if producto.existencia <= producto.stock_minimo %}
+
+                                        <strong class="yellow">
+                                            {{ producto.existencia }}
+                                        </strong>
+
+                                    {% else %}
+
+                                        <strong class="green">
+                                            {{ producto.existencia }}
+                                        </strong>
+
+                                    {% endif %}
+
+                                </div>
+
+
+                                <!-- ==========================
+                                     CANTIDAD A VENDER
+
+                                     Flask recibe estos valores
+                                     mediante:
+
+                                         request.form.getlist(
+                                             "cantidad"
+                                         )
+
+                                     La posición de cantidad
+                                     corresponde a la posición
+                                     de id_variante.
+                                     ========================== -->
+                                <div class="quantity-control">
+
+                                    <button
+                                        type="button"
+                                        class="quantity-btn minus"
+                                    >
+                                        −
+                                    </button>
+
+
+                                    <input
+                                        type="number"
+                                        name="cantidad"
+                                        value="0"
+                                        min="0"
+                                        max="{{ producto.existencia }}"
+                                        class="quantity-input"
+                                    >
+
+
+                                    <button
+                                        type="button"
+                                        class="quantity-btn plus"
+                                    >
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <!-- ======================================
+                         SIN PRODUCTOS
+                         ====================================== -->
+                    <div class="empty-state">
+
+                        <h3>
+                            No hay productos disponibles
+                        </h3>
+
+                        <p>
+                            No existen variantes con inventario disponible.
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             MÉTODO DE PAGO
+             ================================================== -->
+        <section class="block">
+
+            <div class="block-title">
+                Método de pago
+            </div>
+
+
+            <div class="payment">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="metodo_pago"
+                        value="EFECTIVO"
+                        checked
+                    >
+
+                    Efectivo
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="metodo_pago"
+                        value="TARJETA"
+                    >
+
+                    Tarjeta
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             ACCIONES
+             ================================================== -->
+        <section class="block">
+
+            <div class="sale-actions">
+
+
+                <!-- ==============================
+                     CANCELAR
+                     ============================== -->
+                <a
+                    href="{{ url_for('pagina_principal') }}"
+                    class="button cancel-sale"
+                >
+                    Cancelar
+                </a>
+
+
+                <!-- ==============================
+                     VER COMPROBANTE
+
+                     IMPORTANTE:
+
+                     Este botón NO debe tener:
+
+                         type="button"
+
+                     porque necesitamos que envíe
+                     el formulario.
+
+                     Al presionarlo se ejecuta:
+
+                         POST /comprobante/preview
+
+                     y Flask ejecuta:
+
+                         comprobante_preview()
+                     ============================== -->
+                <button
+                    type="submit"
+                    class="button confirm-sale"
+                >
+                    Ver comprobante
+                </button>
+
+            </div>
+
+        </section>
+
+    </form>
+
+</main>
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+     
+     Únicamente controla los botones + y −.
+     
+     NO registra ventas.
+     NO modifica MySQL.
+     NO calcula precios.
+     ========================================================== -->
+<script>
+
+    document
+        .querySelectorAll(".product-card")
+        .forEach(function(card) {
+
+            const input =
+                card.querySelector(".quantity-input");
+
+            const minus =
+                card.querySelector(".minus");
+
+            const plus =
+                card.querySelector(".plus");
+
+
+            if (!input || !minus || !plus) {
+                return;
+            }
+
+            minus.addEventListener(
+                "click",
+                function() {
+
+                    let cantidad =
+                        parseInt(input.value) || 0;
+
+                    if (cantidad > 0) {
+                        cantidad--;
+                    }
+
+                    input.value = cantidad;
+
+                }
+            );
+
+            plus.addEventListener(
+                "click",
+                function() {
+
+                    let cantidad =
+                        parseInt(input.value) || 0;
+
+                    let maximo =
+                        parseInt(input.max) || 0;
+
+
+                    if (cantidad < maximo) {
+                        cantidad++;
+                    }
+
+                    input.value = cantidad;
+
+                }
+            );
+
+
+            input.addEventListener(
+                "change",
+                function() {
+
+                    let cantidad =
+                        parseInt(input.value) || 0;
+
+                    let maximo =
+                        parseInt(input.max) || 0;
+
+
+                    if (cantidad < 0) {
+                        cantidad = 0;
+                    }
+
+
+                    if (cantidad > maximo) {
+                        cantidad = maximo;
+                    }
+
+
+                    input.value = cantidad;
+
+                }
+            );
+
+        });
+
+</script>
+```
+
+</body>
+</html>
