@@ -1,0 +1,901 @@
+:root {
+    --background: #0f1118;
+    --panel: rgba(29, 33, 45, .85);
+    --panel-hover: rgba(37, 42, 56, .95);
+    --primary: #e50914;
+    --secondary: #ffc857;
+    --text: #ffffff;
+    --text-soft: #98a2b3;
+    --border: rgba(255, 255, 255, .05);
+    --shadow: 0 25px 60px rgba(0, 0, 0, .45);
+
+    --success: #35d07f;
+    --warning: #ffc857;
+    --danger: #ff5c5c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(229, 9, 20, .08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(255, 200, 87, .04),
+            transparent 25%
+        ),
+        var(--background);
+
+    color: var(--text);
+    font-family: "Montserrat", sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 30px 18px;
+
+    background: rgba(15, 17, 24, .96);
+    border-right: 1px solid var(--border);
+
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.logo {
+    padding: 8px 14px 30px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    margin-top: 3px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-title {
+    margin: 0 12px 8px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 0 13px;
+
+    color: var(--text-soft);
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.nav a:hover {
+    background: var(--panel-hover);
+    color: var(--text);
+    transform: translateX(2px);
+}
+
+.nav a.active {
+    background: rgba(229, 9, 20, .12);
+    color: var(--text);
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.main {
+    margin-left: 250px;
+    min-height: 100vh;
+
+    padding: 35px 40px 60px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+}
+
+.header p {
+    margin-top: 8px;
+
+    max-width: 700px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    color: var(--text-soft);
+
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--success);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px rgba(53, 208, 127, .5);
+}
+
+/* =========================================================
+   BLOQUES
+========================================================= */
+
+.block {
+    margin-bottom: 30px;
+}
+
+.block-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 16px;
+}
+
+.block-title h3 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.block-title p {
+    margin-top: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+.block-info {
+    padding: 7px 12px;
+
+    color: var(--text-soft);
+
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   MÉTRICAS
+========================================================= */
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+}
+
+.metric-card {
+    min-height: 125px;
+
+    padding: 20px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    background: var(--panel-hover);
+}
+
+.metric-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.metric-card strong {
+    display: block;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.metric-card small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.metric-card.success {
+    border-top: 2px solid var(--success);
+}
+
+.metric-card.warning {
+    border-top: 2px solid var(--warning);
+}
+
+.metric-card.danger {
+    border-top: 2px solid var(--danger);
+}
+
+/* =========================================================
+   CONTENEDORES
+========================================================= */
+
+.panel {
+    padding: 24px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   TARJETAS DE SALAS
+========================================================= */
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.room-card {
+    position: relative;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-3px);
+    background: var(--panel-hover);
+}
+
+.room-card.warning-card {
+    border-color: rgba(255, 200, 87, .35);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 200, 87, .06),
+            var(--panel)
+        );
+}
+
+.room-card.vip-card {
+    border-color: rgba(255, 200, 87, .22);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 200, 87, .045),
+            var(--panel)
+        );
+}
+
+/* =========================================================
+   ENCABEZADO DE SALA
+========================================================= */
+
+.room-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.room-header h4 {
+    margin-top: 5px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.room-type {
+    display: inline-block;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.room-type.vip {
+    color: var(--secondary);
+}
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.status-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-tag.success {
+    color: var(--success);
+    background: rgba(53, 208, 127, .10);
+}
+
+.status-tag.warning {
+    color: var(--warning);
+    background: rgba(255, 200, 87, .10);
+}
+
+.status-tag.danger {
+    color: var(--danger);
+    background: rgba(255, 92, 92, .10);
+}
+
+/* =========================================================
+   INFORMACIÓN DE PELÍCULA
+========================================================= */
+
+.room-movie {
+    padding: 18px 0;
+}
+
+.room-movie span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.room-movie strong {
+    display: block;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   DATOS DE SALA
+========================================================= */
+
+.room-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    padding-bottom: 18px;
+}
+
+.room-data div {
+    padding: 10px;
+
+    background: rgba(255, 255, 255, .025);
+
+    border-radius: 8px;
+}
+
+.room-data span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 9px;
+}
+
+.room-data strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   ACCIONES DE SALA
+========================================================= */
+
+.room-action {
+    padding-top: 14px;
+
+    border-top: 1px solid var(--border);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    color: var(--text);
+
+    background: rgba(229, 9, 20, .10);
+
+    border: 1px solid rgba(229, 9, 20, .25);
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.button:hover {
+    background: rgba(229, 9, 20, .18);
+    border-color: rgba(229, 9, 20, .45);
+
+    transform: translateY(-1px);
+}
+
+.warning-button {
+    color: var(--warning);
+
+    background: rgba(255, 200, 87, .08);
+
+    border-color: rgba(255, 200, 87, .25);
+}
+
+.warning-button:hover {
+    background: rgba(255, 200, 87, .14);
+    border-color: rgba(255, 200, 87, .4);
+}
+
+/* =========================================================
+   OCUPACIÓN
+========================================================= */
+
+.occupancy-panel {
+    padding: 25px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+.occupancy-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.occupancy-summary div {
+    padding: 17px;
+
+    background: rgba(255, 255, 255, .025);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.occupancy-summary span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+}
+
+.occupancy-summary strong {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   BARRAS DE OCUPACIÓN
+========================================================= */
+
+.occupancy-bars {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.bar-row {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.bar-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 11px;
+}
+
+.bar-label span {
+    color: var(--text-soft);
+}
+
+.bar-label strong {
+    font-size: 11px;
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .06);
+
+    border-radius: 20px;
+}
+
+.bar-fill {
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: inherit;
+
+    box-shadow: 0 0 10px rgba(229, 9, 20, .25);
+}
+
+.bar-fill.vip-fill {
+    background: var(--secondary);
+
+    box-shadow: 0 0 10px rgba(255, 200, 87, .25);
+}
+
+/* =========================================================
+   ACCIONES DE SUPERVISIÓN
+========================================================= */
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.action-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    color: var(--text);
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+
+    background: var(--panel-hover);
+
+    border-color: rgba(229, 9, 20, .25);
+}
+
+.action-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 35px;
+    height: 35px;
+
+    color: var(--primary);
+
+    background: rgba(229, 9, 20, .08);
+
+    border-radius: 8px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.action-card h4 {
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.action-card p {
+    color: var(--text-soft);
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .08);
+    border-radius: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .main {
+        padding: 30px;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .room-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main {
+        margin-left: 210px;
+        padding: 25px;
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header-status {
+        align-self: flex-start;
+    }
+
+    .occupancy-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        padding: 20px;
+    }
+
+    .logo {
+        padding-bottom: 20px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav-section {
+        gap: 3px;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 22px 18px 40px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .metric-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .occupancy-panel {
+        padding: 18px;
+    }
+
+    .room-card {
+        padding: 18px;
+    }
+
+}

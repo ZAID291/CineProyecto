@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cinema Pro | Cierre de Caja
+    </title>
+
+    <link rel="stylesheet" href="cierre_caja.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <h1>
+                CINEMA
+            </h1>
+
+            <p>
+                TAQUILLA
+            </p>
+
+        </div>
+
+
+
+        <nav>
+
+
+            <span class="menu-title">
+                OPERACIÓN
+            </span>
+
+
+            <a href="pagina_principal.html">
+                Página principal
+            </a>
+
+
+            <a href="venta_boletos.html">
+                Venta boletos
+            </a>
+            <span class="menu-title">
+                CAJA
+            </span>
+
+
+            <a class="active" href="cierre_caja.html">
+                Cierre de caja
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+
+    <main>
+
+
+
+        <div class="header">
+
+
+            <div>
+
+                <h1>
+                    Cierre de caja
+                </h1>
+
+
+                <p>
+                    Resumen del turno actual
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- RESUMEN -->
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Resumen del turno
+
+            </div>
+
+
+
+            <div class="dashboard-grid">
+
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Boletos vendidos
+                    </span>
+
+
+                    <strong>
+                        87
+                    </strong>
+
+                </div>
+
+
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Ventas realizadas
+                    </span>
+
+
+                    <strong>
+                        46
+                    </strong>
+
+
+                </div>
+
+
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Total vendido
+                    </span>
+
+
+                    <strong class="green">
+                        $13,200
+                    </strong>
+
+
+                </div>
+
+
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Turno
+                    </span>
+
+
+                    <strong>
+                        14:00 - 22:00
+                    </strong>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- DETALLE DE PAGO -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Detalle de dinero
+
+            </div>
+
+
+
+            <div class="panel">
+
+
+
+                <table>
+
+
+                    <thead>
+
+
+                        <tr>
+
+                            <th>
+                                Método
+                            </th>
+
+                            <th>
+                                Cantidad
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+
+                        </tr>
+
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+
+                        <tr>
+
+                            <td>
+                                Efectivo
+                            </td>
+
+
+                            <td>
+                                25 ventas
+                            </td>
+
+
+                            <td>
+                                $5,800
+                            </td>
+
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                Tarjeta
+                            </td>
+
+
+                            <td>
+                                21 ventas
+                            </td>
+
+
+                            <td>
+                                $7,400
+                            </td>
+
+
+                        </tr>
+
+
+
+                    </tbody>
+
+
+                </table>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- VERIFICACION -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Entrega de caja
+
+            </div>
+
+
+
+
+            <div class="panel close-box">
+
+
+
+                <div class="close-item">
+
+
+                    <span>
+                        Total esperado
+                    </span>
+
+
+                    <strong>
+                        $13,200
+                    </strong>
+
+
+                </div>
+
+
+
+                <div class="close-item">
+
+
+                    <span>
+                        Dinero recibido
+                    </span>
+
+
+                    <input 
+                    type="number"
+                    placeholder="$0">
+
+
+                </div>
+
+
+
+
+                <div class="close-item">
+
+
+                    <span>
+                        Diferencia
+                    </span>
+
+
+                    <strong class="green">
+                        $0
+                    </strong>
+
+
+                </div>
+
+
+
+
+                <button class="button confirm-close">
+
+                    Confirmar cierre
+
+                </button>
+
+
+
+                <button class="button cancel-sale">
+
+                    Cancelar
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+        <!-- ULTIMAS VENTAS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Ventas del turno
+
+            </div>
+
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Folio
+                            </th>
+
+
+                            <th>
+                                Película
+                            </th>
+
+
+                            <th>
+                                Sala
+                            </th>
+
+
+                            <th>
+                                Total
+                            </th>
+
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                #000458
+                            </td>
+
+                            <td>
+                                Minecraft
+                            </td>
+
+                            <td>
+                                VIP 1
+                            </td>
+
+                            <td>
+                                $360
+                            </td>
+
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                #000457
+                            </td>
+
+                            <td>
+                                Avatar
+                            </td>
+
+                            <td>
+                                Regular 3
+                            </td>
+
+                            <td>
+                                $180
+                            </td>
+
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>

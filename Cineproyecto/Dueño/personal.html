@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Pro | Operaciones</title>
+    <link rel="stylesheet" href="personal.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>CINEMA PRO</h1>
+            <p>ADMINISTRATIVE SYSTEM</p>
+        </div>
+        <nav>
+            <div class="menu-title">
+                GENERAL
+            </div>
+            <a href="pagina_principal.html">
+                ✦ Centro ejecutivo
+            </a>
+            <a href="operaciones.html">
+                ◉ Operaciones
+            </a>
+            <a href="alertas.html">
+                ⚠︎ Alertas
+            </a>
+            <div class="menu-title">
+                CINE
+            </div>
+            <a href="salas.html">
+                ◫ Salas
+            </a>
+            <a href="cartelera.html">
+                ◈ Cartelera
+            </a>
+            <a href="boletos.html">
+                ⌘ Boletos
+            </a>
+            <a href="dulceria.html">
+                ◌ Dulcería
+            </a>
+            <a href="inventario.html">
+                ⊞ Inventario
+            </a>
+            <div class="menu-title">
+                EMPRESA
+            </div>
+            <a href="personal.html" class="active">
+                ✉︎ Personal
+            </a>
+            <a href="finanzas.html">
+                ◇ Finanzas
+            </a>
+            <a href="#">
+                ▣ Reportes
+            </a>
+            <a href="#">
+                ⚙︎ Configuración
+            </a>
+        </nav>
+    </aside>
+    <!-- MAIN -->
+    <main>
+        <header class="header">
+            <div>
+                <h1>
+                    Personal
+                </h1>
+                <p>
+                    Análisis de personal para decisiones estratégicas
+                </p>
+            </div>
+            <button class="button">
+                Actualizar reporte
+            </button>
+        </header>   
+        
+        <!-- NAVEGACIÓN DE DEPARTAMENTOS -->
+
+
+        <section class="department-menu">
+
+
+            <a href="empleados/taquilla.html" class="department-button">
+
+                <span>
+                    🎟️
+                </span>
+
+                Taquilla
+
+            </a>
+
+
+
+            <a href="empleados/dulceria.html" class="department-button">
+
+                <span>
+                    🍿
+                </span>
+
+                Dulcería
+
+            </a>
+
+
+
+            <a href="empleados/tecnicos.html" class="department-button">
+
+                <span>
+                    🔧
+                </span>
+
+                Técnicos
+
+            </a>
+
+
+
+            <a href="empleados/limpieza.html" class="department-button">
+
+                <span>
+                    🧹
+                </span>
+
+                Limpieza
+
+            </a>
+
+
+
+            <a href="empleados/marketing.html" class="department-button">
+
+                <span>
+                    📢
+                </span>
+
+                Marketing
+
+            </a>
+
+
+        </section><!-- RESUMEN EJECUTIVO -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Estado general del personal
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Indicador
+                            </th>
+
+                            <th>
+                                Resultado
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                            <th>
+                                Observación
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Empleados activos
+                            </td>
+
+                            <td>
+                                18
+                            </td>
+
+                            <td class="green">
+                                Excelente
+                            </td>
+
+                            <td>
+                                Plantilla completa.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Asistencia general
+                            </td>
+
+                            <td>
+                                96%
+                            </td>
+
+                            <td class="green">
+                                Estable
+                            </td>
+
+                            <td>
+                                Solo dos ausencias registradas.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Productividad
+                            </td>
+
+                            <td>
+                                93%
+                            </td>
+
+                            <td class="green">
+                                Alta
+                            </td>
+
+                            <td>
+                                Rendimiento superior a la meta.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Incidencias
+                            </td>
+
+                            <td>
+                                5
+                            </td>
+
+                            <td class="yellow">
+                                Atención
+                            </td>
+
+                            <td>
+                                Principalmente retardos.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Horas extra
+                            </td>
+
+                            <td>
+                                32 horas
+                            </td>
+
+                            <td class="yellow">
+                                Vigilar
+                            </td>
+
+                            <td>
+                                Técnicos concentran la mayor carga.
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- DEPARTAMENTOS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Estado por departamento
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Departamento
+                            </th>
+
+                            <th>
+                                Empleados
+                            </th>
+
+                            <th>
+                                Productividad
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                🎟️ Taquilla
+                            </td>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td class="green">
+                                97%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                Abrir departamento
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                🍿 Dulcería
+                            </td>
+
+                            <td>
+                                5
+                            </td>
+
+                            <td class="green">
+                                94%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                Abrir departamento
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                📢 Marketing
+                            </td>
+
+                            <td>
+                                2
+                            </td>
+
+                            <td class="yellow">
+                                87%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Atención
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                Abrir departamento
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                🧹 Limpieza
+                            </td>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td class="green">
+                                95%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                Abrir departamento
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                🔧 Técnicos
+                            </td>
+
+                            <td>
+                                3
+                            </td>
+
+                            <td class="yellow">
+                                90%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Bueno
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                Abrir departamento
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+        <!-- DEPARTAMENTOS DESTACADOS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Departamentos destacados
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Mejor desempeño
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Motivo
+                                </th>
+
+                                <th>
+                                    Impacto
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Taquilla
+                                </td>
+
+                                <td>
+                                    Mayor productividad.
+                                </td>
+
+                                <td class="green">
+                                    Incremento de ingresos.
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td>
+                                    Sin incidencias operativas.
+                                </td>
+
+                                <td class="green">
+                                    Excelente experiencia.
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Mayor ticket promedio.
+                                </td>
+
+                                <td class="green">
+                                    Mayor utilidad.
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Requieren atención
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Problema
+                                </th>
+
+                                <th>
+                                    Riesgo
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Marketing
+                                </td>
+
+                                <td>
+                                    Baja conversión de campañas.
+                                </td>
+
+                                <td class="yellow">
+                                    Menor asistencia.
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    Técnicos
+                                </td>
+
+                                <td>
+                                    Exceso de horas extra.
+                                </td>
+
+                                <td class="yellow">
+                                    Fatiga laboral.
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Rotación elevada.
+                                </td>
+
+                                <td class="red">
+                                    Costos de capacitación.
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+                <!-- COMPARATIVA ENTRE DEPARTAMENTOS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Comparativa de rendimiento
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Departamento
+                            </th>
+
+                            <th>
+                                Hoy
+                            </th>
+
+                            <th>
+                                Semana
+                            </th>
+
+                            <th>
+                                Mes
+                            </th>
+
+                            <th>
+                                Tendencia
+                            </th>
+
+                            <th>
+                                Interpretación
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Taquilla
+                            </td>
+
+                            <td class="green">
+                                98%
+                            </td>
+
+                            <td class="green">
+                                96%
+                            </td>
+
+                            <td class="green">
+                                95%
+                            </td>
+
+                            <td class="green">
+                                ▲ +4%
+                            </td>
+
+                            <td>
+                                Incremento constante en productividad.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Dulcería
+                            </td>
+
+                            <td class="green">
+                                95%
+                            </td>
+
+                            <td>
+                                94%
+                            </td>
+
+                            <td>
+                                93%
+                            </td>
+
+                            <td class="green">
+                                ▲ +2%
+                            </td>
+
+                            <td>
+                                Buen desempeño durante el mes.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Marketing
+                            </td>
+
+                            <td class="yellow">
+                                86%
+                            </td>
+
+                            <td>
+                                88%
+                            </td>
+
+                            <td>
+                                90%
+                            </td>
+
+                            <td class="red">
+                                ▼ -4%
+                            </td>
+
+                            <td>
+                                Menor impacto de campañas recientes.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Limpieza
+                            </td>
+
+                            <td class="green">
+                                96%
+                            </td>
+
+                            <td>
+                                95%
+                            </td>
+
+                            <td>
+                                94%
+                            </td>
+
+                            <td class="green">
+                                ▲ +1%
+                            </td>
+
+                            <td>
+                                Servicio estable y consistente.
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Técnicos
+                            </td>
+
+                            <td class="yellow">
+                                89%
+                            </td>
+
+                            <td>
+                                90%
+                            </td>
+
+                            <td>
+                                91%
+                            </td>
+
+                            <td class="yellow">
+                                ▼ -2%
+                            </td>
+
+                            <td>
+                                Mayor carga de mantenimiento.
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- INDICADORES OPERATIVOS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Indicadores por departamento
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Productividad
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Resultado
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Taquilla
+                                </td>
+
+                                <td class="green">
+                                    Excelente
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td class="green">
+                                    Muy buena
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Marketing
+                                </td>
+
+                                <td class="yellow">
+                                    Regular
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td class="green">
+                                    Excelente
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Técnicos
+                                </td>
+
+                                <td class="yellow">
+                                    Buena
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Puntualidad
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Puntualidad
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Taquilla
+                                </td>
+
+                                <td class="green">
+                                    99%
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    96%
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Marketing
+                                </td>
+
+                                <td class="yellow">
+                                    91%
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td class="green">
+                                    98%
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Técnicos
+                                </td>
+
+                                <td>
+                                    94%
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- CARGA LABORAL -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Carga laboral
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Departamento
+                            </th>
+
+                            <th>
+                                Horas extra
+                            </th>
+
+                            <th>
+                                Ausencias
+                            </th>
+
+                            <th>
+                                Incidencias
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Taquilla
+                            </td>
+
+                            <td>
+                                4 hrs
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Estable
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Dulcería
+                            </td>
+
+                            <td>
+                                8 hrs
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+                                3
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Vigilar
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Marketing
+                            </td>
+
+                            <td>
+                                2 hrs
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                            <td>
+                                2
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Atención
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Limpieza
+                            </td>
+
+                            <td>
+                                6 hrs
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+                                1
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Correcto
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Técnicos
+                            </td>
+
+                            <td class="red">
+                                12 hrs
+                            </td>
+
+                            <td>
+                                0
+                            </td>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Sobrecarga
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+                <!-- RANKING GENERAL DE DEPARTAMENTOS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Ranking general de departamentos
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Posición
+                            </th>
+
+                            <th>
+                                Departamento
+                            </th>
+
+                            <th>
+                                Productividad
+                            </th>
+
+                            <th>
+                                Eficiencia
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                            <th>
+                                Tendencia
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                🥇 1
+                            </td>
+
+                            <td>
+                                Taquilla
+                            </td>
+
+                            <td class="green">
+                                97%
+                            </td>
+
+                            <td>
+                                Muy alta
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                            <td class="green">
+                                ▲ Creciendo
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                🥈 2
+                            </td>
+
+                            <td>
+                                Limpieza
+                            </td>
+
+                            <td class="green">
+                                95%
+                            </td>
+
+                            <td>
+                                Alta
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                            <td class="green">
+                                ▲ Estable
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                🥉 3
+                            </td>
+
+                            <td>
+                                Dulcería
+                            </td>
+
+                            <td>
+                                94%
+                            </td>
+
+                            <td>
+                                Buena
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Buena
+
+                                </span>
+
+                            </td>
+
+                            <td class="green">
+                                ▲ Mejorando
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                4
+                            </td>
+
+                            <td>
+                                Técnicos
+                            </td>
+
+                            <td class="yellow">
+                                90%
+                            </td>
+
+                            <td>
+                                Buena
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Atención
+
+                                </span>
+
+                            </td>
+
+                            <td class="yellow">
+                                ▼ Disminuyendo
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                5
+                            </td>
+
+                            <td>
+                                Marketing
+                            </td>
+
+                            <td class="red">
+                                87%
+                            </td>
+
+                            <td>
+                                Regular
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Revisar
+
+                                </span>
+
+                            </td>
+
+                            <td class="red">
+                                ▼ Baja constante
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- RIESGOS LABORALES -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Riesgos laborales detectados
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Riesgos operativos
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Riesgo
+                                </th>
+
+                                <th>
+                                    Impacto
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Técnicos
+                                </td>
+
+                                <td>
+                                    Sobrecarga laboral
+                                </td>
+
+                                <td class="red">
+                                    Alto
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Marketing
+                                </td>
+
+                                <td>
+                                    Baja productividad
+                                </td>
+
+                                <td class="yellow">
+                                    Medio
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Rotación de personal
+                                </td>
+
+                                <td class="yellow">
+                                    Medio
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Oportunidades
+
+                    </h2>
+
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Departamento
+                                </th>
+
+                                <th>
+                                    Oportunidad
+                                </th>
+
+                                <th>
+                                    Beneficio
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    Taquilla
+                                </td>
+
+                                <td>
+                                    Implementar incentivos
+                                </td>
+
+                                <td class="green">
+                                    Más ventas
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Dulcería
+                                </td>
+
+                                <td>
+                                    Capacitación en ventas
+                                </td>
+
+                                <td class="green">
+                                    Mayor ticket promedio
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Limpieza
+                                </td>
+
+                                <td>
+                                    Optimizar rutas
+                                </td>
+
+                                <td class="green">
+                                    Menor tiempo por sala
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- CLIMA ORGANIZACIONAL -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Clima organizacional
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Indicador
+                            </th>
+
+                            <th>
+                                Resultado
+                            </th>
+
+                            <th>
+                                Tendencia
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Satisfacción laboral
+                            </td>
+
+                            <td>
+                                91%
+                            </td>
+
+                            <td class="green">
+                                ▲ +3%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Excelente
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Rotación de personal
+                            </td>
+
+                            <td>
+                                4%
+                            </td>
+
+                            <td class="green">
+                                ▼ -1%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Baja
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Ausentismo
+                            </td>
+
+                            <td>
+                                2%
+                            </td>
+
+                            <td class="green">
+                                Estable
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Controlado
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Evaluación de liderazgo
+                            </td>
+
+                            <td>
+                                9.3 / 10
+                            </td>
+
+                            <td class="green">
+                                ▲
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Muy buena
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Compromiso del personal
+                            </td>
+
+                            <td>
+                                94%
+                            </td>
+
+                            <td class="green">
+                                ▲ +2%
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Alto
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+                <!-- GRÁFICAS COMPARATIVAS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Comparativas visuales
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Productividad por departamento
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Taquilla</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:97%;"></div>
+
+                            </div>
+
+                            <strong>97%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dulcería</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:94%;"></div>
+
+                            </div>
+
+                            <strong>94%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Limpieza</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:95%;"></div>
+
+                            </div>
+
+                            <strong>95%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Técnicos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:90%;"></div>
+
+                            </div>
+
+                            <strong>90%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Marketing</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:87%;"></div>
+
+                            </div>
+
+                            <strong>87%</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Asistencia por departamento
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Taquilla</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:99%;"></div>
+
+                            </div>
+
+                            <strong>99%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Limpieza</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:98%;"></div>
+
+                            </div>
+
+                            <strong>98%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dulcería</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:96%;"></div>
+
+                            </div>
+
+                            <strong>96%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Técnicos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:94%;"></div>
+
+                            </div>
+
+                            <strong>94%</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Marketing</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:92%;"></div>
+
+                            </div>
+
+                            <strong>92%</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Horas extra
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Técnicos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:100%;"></div>
+
+                            </div>
+
+                            <strong>12 hrs</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dulcería</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:67%;"></div>
+
+                            </div>
+
+                            <strong>8 hrs</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Limpieza</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:50%;"></div>
+
+                            </div>
+
+                            <strong>6 hrs</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Taquilla</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:34%;"></div>
+
+                            </div>
+
+                            <strong>4 hrs</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Marketing</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:18%;"></div>
+
+                            </div>
+
+                            <strong>2 hrs</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="panel">
+
+
+                    <h2>
+
+                        Incidencias registradas
+
+                    </h2>
+
+
+                    <div class="chart-container">
+
+
+                        <div class="chart-row">
+
+                            <span>Técnicos</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:100%;"></div>
+
+                            </div>
+
+                            <strong>4</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Dulcería</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:75%;"></div>
+
+                            </div>
+
+                            <strong>3</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Marketing</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:50%;"></div>
+
+                            </div>
+
+                            <strong>2</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Taquilla</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:25%;"></div>
+
+                            </div>
+
+                            <strong>1</strong>
+
+                        </div>
+
+
+
+                        <div class="chart-row">
+
+                            <span>Limpieza</span>
+
+                            <div class="chart-bar">
+
+                                <div class="chart-fill" style="width:25%;"></div>
+
+                            </div>
+
+                            <strong>1</strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- RECOMENDACIONES AUTOMÁTICAS -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Recomendaciones ejecutivas
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Departamento
+                            </th>
+
+                            <th>
+                                Situación
+                            </th>
+
+                            <th>
+                                Impacto
+                            </th>
+
+                            <th>
+                                Acción recomendada
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Taquilla
+                            </td>
+
+                            <td>
+                                Supera consistentemente la meta de ventas.
+                            </td>
+
+                            <td class="green">
+                                Incremento en ingresos.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Otorgar incentivos
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Dulcería
+                            </td>
+
+                            <td>
+                                Buen rendimiento, pero aumentó la rotación.
+                            </td>
+
+                            <td class="yellow">
+                                Riesgo operativo.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Capacitar personal
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Marketing
+                            </td>
+
+                            <td>
+                                Disminuyó el impacto de las campañas recientes.
+                            </td>
+
+                            <td class="red">
+                                Menor asistencia al cine.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Revisar estrategia
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Limpieza
+                            </td>
+
+                            <td>
+                                Mantiene excelentes indicadores de calidad.
+                            </td>
+
+                            <td class="green">
+                                Mejora la experiencia del cliente.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Mantener desempeño
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Técnicos
+                            </td>
+
+                            <td>
+                                Exceso de horas extra y aumento de incidencias.
+                            </td>
+
+                            <td class="red">
+                                Posibles fallas operativas.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Contratar apoyo
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- PRÓXIMAS DECISIONES -->
+
+
+        <section class="block">
+
+
+            <div class="block-title">
+
+                Próximas decisiones para el dueño
+
+            </div>
+
+
+            <div class="panel">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Prioridad
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
+
+                            <th>
+                                Beneficio esperado
+                            </th>
+
+                            <th>
+                                Urgencia
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                Alta
+                            </td>
+
+                            <td>
+                                Revisar desempeño del departamento de Marketing.
+                            </td>
+
+                            <td class="green">
+                                Incrementar asistencia.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Hoy
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Alta
+                            </td>
+
+                            <td>
+                                Reducir horas extra del equipo técnico.
+                            </td>
+
+                            <td class="green">
+                                Disminuir fatiga y riesgos.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-red">
+
+                                    Hoy
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Media
+                            </td>
+
+                            <td>
+                                Capacitar al personal de Dulcería.
+                            </td>
+
+                            <td class="green">
+                                Mayor ticket promedio.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-yellow">
+
+                                    Esta semana
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Baja
+                            </td>
+
+                            <td>
+                                Implementar incentivos para Taquilla.
+                            </td>
+
+                            <td class="green">
+                                Mantener el crecimiento.
+                            </td>
+
+                            <td>
+
+                                <span class="tag tag-green">
+
+                                    Próximo mes
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>
